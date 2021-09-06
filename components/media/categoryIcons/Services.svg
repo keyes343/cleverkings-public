@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26.617" height="26.617" viewBox="0 0 26.617 26.617">
+  <g id="maintenance" transform="translate(0 0.001)">
+    <g id="Group_799" data-name="Group 799" transform="translate(0 0)">
+      <path id="Path_795" data-name="Path 795" d="M19.228,14.59l-1.775,1.775h0L5.194,4.1l.942-.942L2.229.014,0,2.243,3.149,6.15l.942-.942,12.26,12.26-1.775,1.775,2.531,2.531,4.652-4.652Z" transform="translate(0 -0.014)" fill="#3696db"/>
+      <path id="Path_796" data-name="Path 796" d="M354.935,350.3l-4.652,4.652,2.791,2.791a3.29,3.29,0,0,0,4.652-4.652Z" transform="translate(-332.073 -332.087)" fill="#3696db"/>
+    </g>
+    <path id="Path_797" data-name="Path 797" d="M13.471,256.519l-3.634-3.634-2.66,2.66a5.53,5.53,0,1,0,3.634,3.634ZM6.8,262.091a1.79,1.79,0,1,1,0-2.531A1.789,1.789,0,0,1,6.8,262.091Z" transform="translate(0 -239.739)" fill="#3696db"/>
+    <g id="Group_800" data-name="Group 800" transform="translate(13.146 -0.001)">
+      <path id="Path_798" data-name="Path 798" d="M265.982,3.335l-.435-1.11-2.79,2.79-1.127-.3-.3-1.127L264.119.8l-1.11-.435a5.255,5.255,0,0,0-6.976,6.316l-3.16,3.16,3.634,3.634,3.16-3.16a5.255,5.255,0,0,0,6.316-6.976Z" transform="translate(-252.873 0.001)" fill="#3696db"/>
+    </g>
+  </g>
+</svg>
