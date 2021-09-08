@@ -7,9 +7,9 @@ import { h, r, e, s, t } from '../components/pages/incoming';
 
 const Services = () => {
     return (
-        <s.Grid bd="red" gap="0.5rem">
-            Services
-        </s.Grid>
+        <>
+            <pages.Services />
+        </>
     );
 };
 

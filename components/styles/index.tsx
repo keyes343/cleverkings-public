@@ -39,8 +39,10 @@ import * as home from './S_Home';
 import * as nav from './S_Nav';
 import * as header from './S_Header';
 import * as icons from './S_Icons';
+import * as navPages from './S_NavPages';
 
 export {
+    navPages,
     icons,
     header,
     home,

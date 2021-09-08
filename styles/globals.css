@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Rosario|Poppins|Archivo+Black|Aleo|Dosis|Open+Sans|Montaga|Roboto|Work+Sans|Fredoka+On|Cardo|Muli|Inter|Alegreya+Sans+SC|Alegreya+Sans|Alegreya|Atma|Pompiere&display=swap');
 
 :root {
-    /* sizes */
+    /* font - sizes */
     --smallest: 0.7rem;
     --smaller: 0.8rem;
     --small: 0.9rem;
@@ -26,6 +26,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 1rem;
 }
 
 a {

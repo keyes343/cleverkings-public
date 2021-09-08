@@ -10,7 +10,8 @@ export const Navbar = styled(Grid)<{ count: number }>`
     place-items: center end;
     position: relative;
     @media ${e.device.mobileL} {
-        padding: 0.8rem;
+        padding: 1.2rem;
+        /* border: 2px solid blue; */
     }
     /* only deskR̥top */
     ${g.GridA} {
@@ -26,16 +27,27 @@ export const Navbar = styled(Grid)<{ count: number }>`
         }
     }
     /* only mobile */
+
     ${g.GridB} {
         display: none;
         @media ${e.device.mobileL} {
             display: grid;
             grid-template-columns: auto 1fr auto;
+            /* border: 2px solid blue; */
         }
         ${g.Grid1} {
             width: auto;
+            /* border: 2px solid blue; */
+            @media ${e.device.mobileL} {
+                height: 1.3rem;
+                width: 4rem;
+            }
         }
         ${g.Grid2} {
+            @media ${e.device.mobileL} {
+                height: 1.3rem;
+                width: 4rem;
+            }
             width: auto;
         }
     }
@@ -45,16 +57,33 @@ export const Navbar = styled(Grid)<{ count: number }>`
         width: auto;
         height: 100%;
         top: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 2rem;
+        /* transform: translateX(-50%); */
+        /* border: 2px solid blue; */
+        @media ${e.device.mobileL} {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /* end child */
         ${g.Grid1} {
+            /* border: 2px solid red; */
+            border-radius: 60%;
+            overflow: hidden;
+            padding: 1rem;
             background-color: ${(p) => p.theme.primary};
             margin: -0.7rem 0 0;
-            border-radius: 60%;
-            /* border: 2px solid blue; */
-            width: 6rem;
-            height: 5rem;
-            color: white;
+            ${g.Grid1a} {
+                @media ${e.device.mobileL} {
+                    /* border: 2px solid blue; */
+                    margin: 2rem 0 0;
+                    width: 5rem;
+                    height: 4rem;
+                }
+                /* border: 2px solid blue; */
+                width: 6rem;
+                height: 5rem;
+                color: white;
+            }
         }
     } ;
 `;

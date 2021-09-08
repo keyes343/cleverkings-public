@@ -57,18 +57,23 @@ export const Navbar = () => {
 
             {/* only mobile */}
             <s.GridB>
-                <s.Grid1>
-                    <Image src={media.mobileMenu} alt="menu button" width={20} height={20} />
+                <s.Grid1 relative>
+                    <Image src={media.mobileMenu} alt="menu button" layout="fill" objectFit="contain" />
                 </s.Grid1>
                 <div />
-                <s.Grid2>
-                    <Image src={media.threeDots} alt="three dots" width={20} height={20} />
+                <s.Grid2 relative>
+                    <Image src={media.threeDots} alt="three dots" layout="fill" objectFit="contain" />
                 </s.Grid2>
             </s.GridB>
 
-            {/* center logo */}
+            {/* center logo for mobile */}
+            {/* left logo for desktop */}
             <s.GridC>
-                <s.Grid1>CK Logo</s.Grid1>
+                <s.Grid1>
+                    <s.Grid1a relative>
+                        <Image src={media.logos.white_logo} alt="logo" layout="fill" objectFit="contain" />
+                    </s.Grid1a>
+                </s.Grid1>
             </s.GridC>
         </s.nav.Navbar>
     );

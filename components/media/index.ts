@@ -43,8 +43,10 @@ import * as backgrounds from './backgrounds/index';
 import * as ourThoughts from './ourThoughts/index';
 import * as footer from './footer/index';
 import * as logos from './logos/index';
+import * as pages from './pages/index';
 
 export {
+    pages,
     logos,
     footer,
     ourThoughts,

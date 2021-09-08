@@ -8,6 +8,15 @@ export const ThingsThatMatter = () => {
         <s.home.ThingsThatMatter>
             <ShoutoutText />
             <SocialIcons />
+            {/* off in mobile */}
+            {/* black dot moving from left to side animation */}
+            <s.Box1>
+                <Image src={media.black_dots} alt="" layout="fill" objectFit="contain" />
+            </s.Box1>
+            {/* stationary laptop image */}
+            <s.Box2>
+                <Image src={media.laptop} alt="" layout="fill" objectFit="contain" />
+            </s.Box2>
         </s.home.ThingsThatMatter>
     );
 };
@@ -17,14 +26,19 @@ export const ThingsThatMatter = () => {
 const ShoutoutText = () => {
     return (
         <s.home.ShoutoutArea>
-            <s.Box1>
+            <s.Box3>
                 We do things <br /> that matter.
-            </s.Box1>
-            <s.Box>
+            </s.Box3>
+            {/* off in desktop */}
+            <s.Grid2a relative>
+                <Image src={media.laptop} alt="" layout="fill" objectFit="contain" />
+            </s.Grid2a>
+            {/* <s.Grid1a>dd</s.Grid1a> */}
+            <s.Box4>
                 Unique Solutions for your Business.
                 <br />
                 Solving problems since 2015 {`:)`}
-            </s.Box>
+            </s.Box4>
             <s.Grid1>Lets Talk</s.Grid1>
         </s.home.ShoutoutArea>
     );
@@ -88,15 +102,23 @@ export const ThingsWeLove = () => {
             <s.Grid2>
                 {icons.map((icon, i) => {
                     return (
-                        <s.Grid3 key={i}>
-                            <s.GridA>
-                                <Image src={icon.icon} alt="" height={50} width={50} />
+                        <s.Grid2a key={i}>
+                            <s.GridA relative>
+                                <Image src={icon.icon} alt="" layout="fill" objectFit="contain" />
                             </s.GridA>
                             <s.GridB>{icon.title}</s.GridB>
-                        </s.Grid3>
+                        </s.Grid2a>
                     );
                 })}
             </s.Grid2>
+
+            {/* only mobile */}
+            {/* white dots floating */}
+            <s.Grid3>
+                <s.Grid3a relative>
+                    <Image src={media.white_dots} layout="fill" objectFit="contain" alt="" />
+                </s.Grid3a>
+            </s.Grid3>
         </s.home.ThingsWeLove>
     );
 };
@@ -144,9 +166,15 @@ export const WeAre = () => {
 const ThreePics = () => {
     return (
         <s.home.ThreePics>
-            <s.Grid1 />
-            <s.Grid2 />
-            <s.Grid3 />
+            <s.Grid1 relative>
+                <Image src={media.pages.home.who_we_are_1} alt="" layout="fill" objectFit="cover" />
+            </s.Grid1>
+            <s.Grid2 relative>
+                <Image src={media.pages.home.who_we_are_2} alt="" layout="fill" objectFit="cover" />
+            </s.Grid2>
+            <s.Grid3 relative>
+                <Image src={media.pages.home.who_we_are_3} alt="" layout="fill" objectFit="cover" />
+            </s.Grid3>
         </s.home.ThreePics>
     );
 };
@@ -154,18 +182,20 @@ const ThreePics = () => {
 const Awards = () => {
     const icons = [media.award_1, media.award_2, media.award_3, media.award_4];
     return (
-        <s.home.Awards>
-            <s.Box1>Awards &amp; Recognition</s.Box1>
+        <s.home.Awards count={icons.length}>
+            <s.Box3>Awards &amp; Recognition</s.Box3>
             <s.Box2>CLEVERKINGS PVT. LTD, AN ISO 9001:2015 CERTIFIED COMPANY</s.Box2>
             <s.Grid1>
-                {icons.map((icon, i) => {
-                    return (
-                        <s.Box3 key={i}>
-                            <Image src={icon} alt="" height={80} width={80} />
-                        </s.Box3>
-                    );
-                })}
-                <div />
+                <s.Grid1a>
+                    {icons.map((icon, i) => {
+                        return (
+                            <s.Box3 key={i} relative>
+                                <Image src={icon} alt="" layout="fill" objectFit="contain" />
+                            </s.Box3>
+                        );
+                    })}
+                    <div />
+                </s.Grid1a>
             </s.Grid1>
         </s.home.Awards>
     );
@@ -185,8 +215,8 @@ export const DiscussProject = () => {
             <div />
             {/* col 1 of 2 - two line text */}
             <s.Box2>
-                <span style={{ fontWeight: 'bold', fontSize: '1.7rem' }}>T</span>he way we work is to define your problem, and find the best <br />
-                way to solve the problem. We Turn Experiences Into Solutions
+                <span style={{ fontWeight: 'bold', fontSize: '1.7rem' }}>T</span>he way we work is to define your problem, and find the best way to
+                solve the problem. We Turn Experiences Into Solutions
             </s.Box2>
             {/* col 2 of 2 - discuss a project */}
             <s.Grid2>
@@ -209,12 +239,14 @@ export const ViewAllProjects = () => {
             </s.GridA>
 
             <s.GridB>
-                <s.Grid1>
-                    <Image src={media.left_arrow} alt="laptop" height="80" width="80" />
+                <s.Grid1 relative>
+                    <Image src={media.left_arrow} alt="laptop" layout="fill" objectFit="contain" />
                 </s.Grid1>
-                <Image src={media.laptop} alt="laptop" height="300" width="300" />
-                <s.Grid1>
-                    <Image src={media.right_arrow} alt="laptop" height="80" width="80" />
+                <s.Grid2 relative>
+                    <Image src={media.laptop} alt="laptop" layout="fill" objectFit="contain" />
+                </s.Grid2>
+                <s.Grid1 relative>
+                    <Image src={media.right_arrow} alt="laptop" layout="fill" objectFit="contain" />
                 </s.Grid1>
             </s.GridB>
 
@@ -277,13 +309,17 @@ export const OurClients = () => {
                 </s.Grid1>
                 {/* client list */}
                 <s.Grid2>
-                    {client_icons.map((icon, i) => {
-                        return (
-                            <s.Grid2a key={i}>
-                                <Image src={icon} alt="" height={30} width={50} />
-                            </s.Grid2a>
-                        );
-                    })}
+                    <s.Grid2a>
+                        {client_icons.map((icon, i) => {
+                            return (
+                                <s.Grid3a key={i}>
+                                    <s.Grid4a relative>
+                                        <Image src={icon} alt="" layout="fill" objectFit="contain" />
+                                    </s.Grid4a>
+                                </s.Grid3a>
+                            );
+                        })}
+                    </s.Grid2a>
                 </s.Grid2>
                 {/* <div style={{ border: '2px solid cyan', width: '100%' }}>aaa</div> */}
                 {/* <div /> */}
@@ -305,8 +341,8 @@ export const Quote = () => {
             </s.GridA>
             <s.GridB>
                 {/* quote icons */}
-                <s.Grid1>
-                    <Image src={media.quote_icon} alt="quote" height="100" width="100" />
+                <s.Grid1 relative>
+                    <Image src={media.quote_icon} alt="quote" layout="fill" objectFit="contain" />
                 </s.Grid1>
                 <s.Box2>
                     The team here is well qualified and has an incredible level of professionalism.
