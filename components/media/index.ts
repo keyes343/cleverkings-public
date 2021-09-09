@@ -37,7 +37,7 @@ import right_arrow from './designs/right_arrow.svg';
 import right_arrow_black from './designs/right_arrow_black.svg';
 import left_arrow from './designs/left_arrow.svg';
 import quote_icon from './designs/quote_icon.svg';
-import laptop from './designs/laptop.svg';
+import laptop from './designs/laptop_pic.png';
 import * as ourClients from './ourClients/index';
 import * as backgrounds from './backgrounds/index';
 import * as ourThoughts from './ourThoughts/index';
