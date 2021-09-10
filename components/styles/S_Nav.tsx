@@ -108,7 +108,7 @@ export const NavPopupWrapper = styled(Grid)<{ isOn: boolean }>`
         position: fixed;
         top: 3.6rem;
         /* bottom: 9rem; */
-        right: ${(p) => (p.isOn ? `0` : `-9rem`)};
+        right: ${(p) => (p.isOn ? `0` : `-12rem`)};
         /* left: 2rem; */
         width: auto;
         /* min-width: 9rem;

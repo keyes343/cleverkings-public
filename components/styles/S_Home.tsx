@@ -787,17 +787,26 @@ export const LetsTalk = styled(Grid)`
 `;
 
 export const Footer = styled(Grid)`
-    @media ${e.device.mobileL} {
-        /* display: none; */
-        grid-template-columns: 1fr;
-    }
     color: white;
     background-color: rgba(0, 0, 0, 0.9);
     padding: 2rem 4rem;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+    @media ${e.device.mobileL} {
+        /* border: 2px solid blue; */
+        padding: 3.4rem 2rem;
+        /* display: none; */
+        grid-template-columns: 1fr;
+    }
     ${g.GridA} {
         gap: 2rem;
+        place-items: start start;
+        ${g.Grid2} {
+            /* border: 2px solid blue; */
+            margin: -1rem 0 0;
+            height: 5rem;
+            width: 5rem;
+        }
         ${g.Grid1} {
             /* border: 2px solid pink; */
             grid-template-columns: 1fr;

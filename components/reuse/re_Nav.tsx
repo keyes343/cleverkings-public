@@ -128,7 +128,9 @@ export const Footer = () => {
         <s.home.Footer>
             {/* <Image src={media.right_arrow} alt="" layout="fill" objectFit="cover" /> */}
             <s.GridA>
-                <s.Grid2>Logo goes here</s.Grid2>
+                <s.Grid2 relative>
+                    <Image src={media.logos.white_logo} alt="" layout="fill" objectFit="contain" />
+                </s.Grid2>
                 <s.Grid1>
                     {addresses.map((address, i) => {
                         return (
@@ -350,7 +352,7 @@ export const BelowFooter = () => {
             </s.GridA>
             <div />
             <s.GridB>
-                All rights reserved. <br /> Made with love. Team Cleever Kings
+                All rights reserved. <br /> Made with love. Team Clever Kings
             </s.GridB>
         </s.footer.BelowFooter>
     );
