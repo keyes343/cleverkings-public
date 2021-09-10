@@ -2,12 +2,12 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import * as pages from '../components/pages/index';
 
-const About = () => {
+const Cookie_Policy = () => {
     return (
         <>
-            <pages.About />
+            <pages.Cookie_Policy />
         </>
     );
 };
 
-export default About;
+export default Cookie_Policy;

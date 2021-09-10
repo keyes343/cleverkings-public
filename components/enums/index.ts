@@ -45,3 +45,7 @@ export const device = {
     desktop: `(max-width: ${size.desktop})`,
     desktopL: `(max-width: ${size.desktop})`,
 };
+
+export const DivNames = {
+    'right-nav-button': 'right-nav-button',
+};

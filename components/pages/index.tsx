@@ -1,4 +1,5 @@
 import Homepage from './Homepage';
 import About from './About';
 import Services from './Services';
-export { Homepage, About, Services };
+import Cookie_Policy from './Cookie_Policy';
+export { Homepage, About, Services, Cookie_Policy };

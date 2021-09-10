@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useContext } from 'react';
 import { h, r, e, s, t, media } from './incoming';
 import Image from 'next/image';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { NavPopup } from './re_Nav';
 
 export interface PageHeaderProps {
     pic: string;
@@ -39,6 +40,8 @@ export const PageHeader: React.FC<PageHeaderProps> = (p) => {
 
 const Navbar = () => {
     const router = useRouter();
+    const state_settings = useContext(r.settings.StateContext);
+    const dispatch_settings = useContext(r.settings.DispatchContext)!;
     const nav_options = [
         {
             title: 'Home',
@@ -76,14 +79,31 @@ const Navbar = () => {
             dropdown: false,
         },
     ];
+
+    const print_contexts = () => {
+        console.log({
+            state_settings,
+        });
+    };
+
+    const open_navMenu = () => {
+        console.log(`${e.DivNames['right-nav-button']}`);
+        dispatch_settings({
+            type: r.settings.act['active-div-toggle'],
+            payload: e.DivNames['right-nav-button'],
+        });
+    };
     return (
-        <s.header.Navbar>
+        <s.header.Navbar onClick={print_contexts} relative>
+            {/* floating popup for nav */}
+            <NavPopup />
             {/* logo */}
-            <s.Grid1 relative>
+            <s.header.LogoWrapper relative onClick={() => router.push('/')}>
                 <Image src={media.logos.black_logo} alt="" layout="fill" objectFit="contain" />
-            </s.Grid1>
+            </s.header.LogoWrapper>
             {/* nav options */}
-            <s.Grid2>
+            {/* only desktop */}
+            <s.header.NavOption_wrapper>
                 {nav_options.map((option, i) => {
                     return (
                         <s.header.NavOption
@@ -93,17 +113,23 @@ const Navbar = () => {
                                 router.push(option.link);
                             }}
                         >
-                            <s.GridA>{option.title}</s.GridA>
+                            <s.header.NavBtn_title>{option.title}</s.header.NavBtn_title>
                             <s.GridB>
                                 <s.icons.Dropdown />
                             </s.GridB>
                         </s.header.NavOption>
                     );
                 })}
-            </s.Grid2>
-            {/* get started btn */}
+            </s.header.NavOption_wrapper>
+
+            {/* right most button on desktop, hamburger menu on mobile */}
             <s.Grid3>
+                {/* get started btn */}
                 <s.Grid3a>Get Started</s.Grid3a>
+                {/* hamburger menu */}
+                <s.Grid3b onClick={open_navMenu}>
+                    <s.header.Menu_Icon />
+                </s.Grid3b>
             </s.Grid3>
         </s.header.Navbar>
     );

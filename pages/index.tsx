@@ -21,3 +21,9 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+// const ContextWrapper = () => {
+//     const state_settings = useContext(r.settings.StateContext);
+//     const dispatch_settings = useContext(r.settings.DispatchContext)!;
+//     return <></>;
+// };

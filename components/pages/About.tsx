@@ -5,14 +5,25 @@ import Image from 'next/image';
 export interface AboutProps {}
 
 const About: React.FC<AboutProps> = () => {
+    const state_settings = useContext(r.settings.StateContext);
+    const dispatch_settings = useContext(r.settings.DispatchContext)!;
+
+    const clear_activeDiv = () => {
+        if (!!state_settings.active_div) {
+            dispatch_settings({
+                type: r.settings.act['active-div'],
+                payload: null,
+            });
+        }
+    };
     return (
-        <s.navPages.About>
+        <s.navPages.About onClick={clear_activeDiv}>
             <reuse.headers.PageHeader title="ABOUT US" title2="Our services make us the real KINGS" pic={e.links.pics.headers.about} />
             <s.Grid1>
                 <AboutBody />
             </s.Grid1>
-            <reuse.nav.Footer />
-            <reuse.nav.BelowFooter />
+            <reuse.nav.Footer2 />
+            <reuse.nav.BelowFooter2 />
         </s.navPages.About>
     );
 };
@@ -48,6 +59,10 @@ const AboutBody = () => {
             designation: `Managing Director`,
         },
     ];
+
+    const state_settings = useContext(r.settings.StateContext);
+    const dispatch_settings = useContext(r.settings.DispatchContext)!;
+
     return (
         <s.navPages.AboutBody>
             {/* row 1 */}
@@ -68,20 +83,19 @@ const AboutBody = () => {
                 </s.Box2>
             </s.GridA>
             {/* row 2 */}
-            {/* certificates and recognition */}
             <s.GridB>
                 {[
                     {
                         image: media.pages.about.partnership,
                         heading: 'Our Mission',
                         text: `To rise with high standards and professionality and to emerge
-                            as a reliable alternative for our clients.`,
+                        as a reliable alternative for our clients.`,
                     },
                     {
                         image: media.pages.about.solidarity,
                         heading: 'Our Vision',
                         text: `We endeavour to be among the premier software companies in
-                            the industry with a credible name, to accomplish digital`,
+                        the industry with a credible name, to accomplish digital`,
                     },
                 ].map((box, i) => {
                     return (
@@ -99,6 +113,7 @@ const AboutBody = () => {
                 })}
             </s.GridB>
             {/* row 3 */}
+            {/* certificates and recognition */}
             <s.GridC>
                 <s.Grid1>
                     <s.Box1>Certificates &amp; Recognitions</s.Box1>
@@ -121,23 +136,25 @@ const AboutBody = () => {
             {/* our leadership section */}
             <s.GridD>
                 <s.Grid1>
-                    <s.Box1>Meet our Leadershipt</s.Box1>
+                    <s.Box1>Meet our Leadership</s.Box1>
                 </s.Grid1>
-                <s.Grid2>
-                    {profilePics.map((profilePic, i) => {
-                        return (
-                            <s.Grid2a key={i}>
-                                <s.Grid3a relative>
-                                    <Image src={profilePic.pic} alt="" layout="fill" objectFit="contain" />
-                                </s.Grid3a>
-                                <s.Grid3b>
-                                    <s.Box1>{profilePic.name}</s.Box1>
-                                    <s.Box2>{profilePic.designation}</s.Box2>
-                                </s.Grid3b>
-                            </s.Grid2a>
-                        );
-                    })}
-                </s.Grid2>
+                <s.Grid1a>
+                    <s.Grid2>
+                        {profilePics.map((profilePic, i) => {
+                            return (
+                                <s.Grid2a key={i}>
+                                    <s.Grid3a relative>
+                                        <Image src={profilePic.pic} alt="" layout="fill" objectFit="contain" />
+                                    </s.Grid3a>
+                                    <s.Grid3b>
+                                        <s.Box1>{profilePic.name}</s.Box1>
+                                        <s.Box2>{profilePic.designation}</s.Box2>
+                                    </s.Grid3b>
+                                </s.Grid2a>
+                            );
+                        })}
+                    </s.Grid2>
+                </s.Grid1a>
                 <s.Grid3>
                     <s.Box1>View Director Profile</s.Box1>
                 </s.Grid3>

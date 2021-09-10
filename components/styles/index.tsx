@@ -38,10 +38,12 @@ import {
 import * as home from './S_Home';
 import * as nav from './S_Nav';
 import * as header from './S_Header';
+import * as footer from './S_Footer';
 import * as icons from './S_Icons';
 import * as navPages from './S_NavPages';
 
 export {
+    footer,
     navPages,
     icons,
     header,

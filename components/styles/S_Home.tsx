@@ -867,39 +867,3 @@ export const Footer = styled(Grid)`
         }
     }
 `;
-
-export const BelowFooter = styled(Grid)`
-    @media ${e.device.mobileL} {
-        grid-template-columns: 1fr;
-        /* display: none; */
-        /* gap: 3rem; */
-    }
-    background-color: rgba(0, 0, 0, 1);
-    color: white;
-    grid-template-columns: auto 1fr auto;
-    padding: 1rem 2rem;
-    ${g.GridA} {
-        grid-template-columns: repeat(4, auto);
-        gap: 0.4rem;
-        /* border: 2px solid blue; */
-        width: auto;
-        @media ${e.device.mobileL} {
-        }
-        ${g.Grid1} {
-            font-size: var(--smallest);
-            /* border: 2px solid red; */
-            width: auto;
-            @media ${e.device.mobileL} {
-                font-size: 0.7rem;
-            }
-            :hover {
-                color: pink;
-                cursor: pointer;
-            }
-        }
-    }
-    ${g.GridB} {
-        grid-template-columns: 1fr;
-        font-size: var(--smallest);
-    } ;
-`;

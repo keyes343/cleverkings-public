@@ -39,7 +39,7 @@ export const Navbar = styled(Grid)<{ count: number }>`
             width: auto;
             /* border: 2px solid blue; */
             @media ${e.device.mobileL} {
-                height: 1.3rem;
+                height: 1.1rem;
                 width: 4rem;
             }
         }
@@ -86,4 +86,65 @@ export const Navbar = styled(Grid)<{ count: number }>`
             }
         }
     } ;
+`;
+
+export const NavPopup1 = styled(Grid)`
+    border: 2px solid blue;
+    height: 20rem;
+`;
+
+// section
+// only mobile
+export const NavPopupWrapper = styled(Grid)<{ isOn: boolean }>`
+    /* position: absolute; */
+    display: none;
+    z-index: 10;
+    @media ${e.device.mobileL} {
+        /* max-height: ${(p) => (p.isOn ? '29rem' : '0')}; */
+        overflow: hidden;
+        /* border: 2px solid blue; */
+        display: grid;
+        /* height: 4rem; */
+        position: fixed;
+        top: 3.6rem;
+        /* bottom: 9rem; */
+        right: ${(p) => (p.isOn ? `0` : `-9rem`)};
+        /* left: 2rem; */
+        width: auto;
+        /* min-width: 9rem;
+        min-height: 9rem; */
+        transition: all 0.4s ease-in-out;
+        background-color: white;
+        /* box-shadow: ${(p) => (p.isOn ? `0 0 50px 15px rgba(0, 0, 0, 0.6)` : `none`)}; */
+        /* border: 2px solid blue; */
+        border-radius: 0 0 0 20px;
+        color: black;
+    }
+`;
+
+export const NavPopup = styled(Grid)`
+    /* gap: 1rem; */
+    color: white;
+    padding: 1rem 0;
+    /* background-color: rgba(166, 211, 247, 0.4); */
+    background: linear-gradient(45deg, rgba(0, 0, 0, 1) 0%, rgba(8, 52, 85, 1) 100%);
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+`;
+
+export const NavPopup_element = styled(Grid)`
+    font-size: 1rem;
+    /* border: 2px solid cyan; */
+    /* min-width: 6rem; */
+    text-align: end;
+    /* height: 20rem; */
+    /*
+    text-shadow: 1px 1px rgba(62, 116, 126, 0.5); */
+    /* padding: 1rem 0; */
+    ${g.Box1} {
+        /* border: 2px solid blue; */
+        color: rgba(255, 255, 255, 0.8);
+        font-size: var(--medium);
+        padding: 0 1rem;
+    }
 `;
