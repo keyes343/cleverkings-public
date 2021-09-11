@@ -15,7 +15,7 @@ export const ThingsThatMatter = () => {
             </s.home.MovingDots>
             {/* stationary laptop image */}
             <s.home.Laptop>
-                <Image src={media.designs.laptop} alt="" layout="fill" objectFit="contain" />
+                <Image src={media.designs.laptop_pic} alt="" layout="fill" objectFit="contain" />
             </s.home.Laptop>
 
             <s.home.circle1 />
@@ -39,7 +39,7 @@ const ShoutoutText = () => {
             </s.home.ShoutoutArea_heading>
             {/* off in desktop */}
             <s.Grid2a relative>
-                <Image src={media.designs.laptop} alt="" layout="fill" objectFit="contain" />
+                <Image src={media.designs.laptop_pic} alt="" layout="fill" objectFit="contain" />
             </s.Grid2a>
             {/* <s.Grid1a>dd</s.Grid1a> */}
             <s.Box4>
@@ -265,7 +265,7 @@ export const ViewAllProjects = () => {
                     <Image src={media.designs.left_arrow} alt="laptop" layout="fill" objectFit="contain" />
                 </s.Grid1>
                 <s.Grid2 relative>
-                    <Image src={media.designs.laptop} alt="laptop" layout="fill" objectFit="contain" />
+                    <Image src={media.designs.laptop_pic} alt="laptop" layout="fill" objectFit="contain" />
                 </s.Grid2>
                 <s.Grid1 relative>
                     <Image src={media.designs.right_arrow} alt="laptop" layout="fill" objectFit="contain" />

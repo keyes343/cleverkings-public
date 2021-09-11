@@ -6,6 +6,6 @@ import quote_icon from './quote_icon.svg';
 import ribbon from './ribbon.svg';
 import right_arrow_black from './right_arrow.svg';
 import right_arrow from './right_arrow.svg';
-import laptop from './laptop.svg';
+// import laptop from './laptop.svg';
 
-export { black_dots, laptop_pic, left_arrow, right_arrow, quote_icon, ribbon, right_arrow_black, white_dots, laptop };
+export { black_dots, laptop_pic, left_arrow, right_arrow, quote_icon, ribbon, right_arrow_black, white_dots };
