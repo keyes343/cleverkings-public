@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata|Rosario|Poppins|Archivo+Black|Aleo|Dosis|Open+Sans|Montaga|Roboto|Work+Sans|Fredoka+On|Cardo|Muli|Inter|Alegreya+Sans+SC|Alegreya+Sans|Alegreya|Atma|Pompiere&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Overpass|Inconsolata|Rosario|Poppins|Archivo+Black|Aleo|Dosis|Open+Sans|Montaga|Roboto|Work+Sans|Fredoka+On|Cardo|Muli|Inter|Alegreya+Sans+SC|Alegreya+Sans|Alegreya|Atma|Pompiere&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Overpass|Poppins|Open+Sans|Inter&display=swap');
 
 :root {
     /* font - sizes */
@@ -11,13 +12,14 @@
     --largest: 3rem;
 
     /* font */
-    --default: 'Montserrat', sans-serif;
-    --read: 'Montaga', serif;
+    /* --default: 'Montserrat', sans-serif; */
+    /* --read: 'Montaga', serif;
     --readlite: 'Dosis', sans-serif;
     --headline: 'Aleo', serif;
     --tech: 'Inconsolata', monospace;
     --sans: 'Open Sans', sans-serif;
-    --koho: 'KoHo', sans-serif;
+    --koho: 'KoHo', sans-serif; */
+    --default: 'Overpass', sans-serif;
     --poppins: 'Poppins', sans-serif;
 }
 

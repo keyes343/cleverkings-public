@@ -16,7 +16,6 @@ export const column = styled(Grid)<{ count: number; mob_off?: boolean }>`
         padding: 2rem 0;
     }
     ${title} {
-        /* border: 2px solid red; */
         width: auto;
     }
     ${divider} {
@@ -26,7 +25,6 @@ export const column = styled(Grid)<{ count: number; mob_off?: boolean }>`
     ${linkWrapper} {
         gap: 0.4rem;
         ${g.Box1} {
-            /* border: 2px solid red; */
             color: lightblue;
             opacity: 0.8;
         }
@@ -54,7 +52,6 @@ export const Footer2 = styled(Grid)`
         padding: 2rem;
     }
     ${MainWrapper} {
-        /* border: 2px solid red; */
         width: auto;
         grid-template-columns: repeat(4, 1fr);
         grid-template-areas: 'quickLinks usefulLinks subscribe address';
@@ -80,7 +77,6 @@ export const Footer2 = styled(Grid)`
             }
         }
         ${column1} {
-            /* border: 2px solid red; */
             grid-area: quickLinks;
         }
         ${column2} {
@@ -89,10 +85,8 @@ export const Footer2 = styled(Grid)`
         ${column3} {
             grid-area: subscribe;
             ${g.Grid3a} {
-                /* border: 2px solid blue; */
                 place-items: center start;
                 input {
-                    /* border: 2px solid red; */
                     height: 2rem;
                     padding: 1rem;
                     ::placeholder {
@@ -107,7 +101,6 @@ export const Footer2 = styled(Grid)`
             /* border: 2px solid pink; */
             /* row - 1 */
             ${g.Grid1a} {
-                /* border: 2px solid red; */
                 grid-template-columns: 2rem 1fr;
                 place-items: start start;
                 gap: 1rem;
@@ -140,7 +133,6 @@ export const BelowFooter = styled(Grid)`
     padding: 1rem 2rem;
     @media ${e.device.mobileL} {
         grid-template-columns: 1fr;
-        /* border: 2px solid red; */
         /* display: none; */
         gap: 1rem;
         /* gap: 3rem; */
@@ -148,10 +140,8 @@ export const BelowFooter = styled(Grid)`
     ${g.GridA} {
         grid-template-columns: repeat(4, auto);
         gap: 0.4rem;
-        /* border: 2px solid blue; */
         width: auto;
         @media ${e.device.mobileL} {
-            /* border: 2px solid blue; */
             /* grid-template-columns: repeat(2, minm); */
 
             display: flex;
@@ -161,12 +151,10 @@ export const BelowFooter = styled(Grid)`
         }
         ${g.Grid1} {
             font-size: var(--smallest);
-            /* border: 2px solid red; */
             width: auto;
             @media ${e.device.mobileL} {
                 font-size: 1rem;
                 opacity: 0.7;
-                /* border: 2px solid red; */
             }
             :hover {
                 color: pink;
@@ -178,7 +166,7 @@ export const BelowFooter = styled(Grid)`
         grid-template-columns: 1fr;
         /* border: 2px solid blue; */
         text-align: center;
-        /* font-size: var(--smallest); */
+        font-size: var(--smallest);
     } ;
 `;
 

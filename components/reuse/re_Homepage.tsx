@@ -10,13 +10,19 @@ export const ThingsThatMatter = () => {
             <SocialIcons />
             {/* off in mobile */}
             {/* black dot moving from left to side animation */}
-            <s.Box1>
-                <Image src={media.black_dots} alt="" layout="fill" objectFit="contain" />
-            </s.Box1>
+            <s.home.MovingDots>
+                <Image src={media.designs.black_dots} alt="" layout="fill" objectFit="contain" />
+            </s.home.MovingDots>
             {/* stationary laptop image */}
-            <s.Box2>
-                <Image src={media.laptop} alt="" layout="fill" objectFit="contain" />
-            </s.Box2>
+            <s.home.Laptop>
+                <Image src={media.designs.laptop} alt="" layout="fill" objectFit="contain" />
+            </s.home.Laptop>
+
+            <s.home.circle1 />
+            <s.home.circle2 />
+            <s.home.Ribbon>
+                <Image src={media.designs.ribbon} alt="" layout="fill" objectFit="contain" />
+            </s.home.Ribbon>
         </s.home.ThingsThatMatter>
     );
 };
@@ -26,12 +32,14 @@ export const ThingsThatMatter = () => {
 const ShoutoutText = () => {
     return (
         <s.home.ShoutoutArea>
-            <s.Box3>
-                We do things <br /> that matter.
-            </s.Box3>
+            <s.home.ShoutoutArea_heading>
+                <h1>
+                    We do things <br /> that matter.
+                </h1>
+            </s.home.ShoutoutArea_heading>
             {/* off in desktop */}
             <s.Grid2a relative>
-                <Image src={media.laptop} alt="" layout="fill" objectFit="contain" />
+                <Image src={media.designs.laptop} alt="" layout="fill" objectFit="contain" />
             </s.Grid2a>
             {/* <s.Grid1a>dd</s.Grid1a> */}
             <s.Box4>
@@ -39,7 +47,7 @@ const ShoutoutText = () => {
                 <br />
                 Solving problems since 2015 {`:)`}
             </s.Box4>
-            <s.Grid1>Lets Talk</s.Grid1>
+            <s.home.lets_talk_btn>Lets Talk</s.home.lets_talk_btn>
         </s.home.ShoutoutArea>
     );
 };
@@ -47,20 +55,29 @@ const ShoutoutText = () => {
 const SocialIcons = () => {
     const icons = [
         {
-            icon: media.fb,
+            icon: media.social.fb,
             link: '',
         },
         {
-            icon: media.whatsapp,
+            icon: media.social.whatsapp,
             link: '',
         },
         {
-            icon: media.twitter,
+            icon: media.social.twitter,
+            link: '',
+        },
+        {
+            icon: media.social.zoom,
+            link: '',
+        },
+        {
+            icon: media.social.linkedin,
             link: '',
         },
     ];
     return (
         <s.home.SocialIcions>
+            {/* hh */}
             {icons.map((icon, i) => {
                 return (
                     <s.Grid key={i}>
@@ -97,28 +114,28 @@ export const ThingsWeLove = () => {
     ];
     return (
         <s.home.ThingsWeLove>
-            <s.Grid1>Things &nbsp;We &nbsp;L o v e &nbsp;to &nbsp;do</s.Grid1>
+            <s.home.ThingsWeLove_line1>Things &nbsp;We &nbsp;L o v e &nbsp;to &nbsp;do</s.home.ThingsWeLove_line1>
             <div />
-            <s.Grid2>
+            <s.home.ThingsWeLove_line2>
                 {icons.map((icon, i) => {
                     return (
                         <s.Grid2a key={i}>
-                            <s.GridA relative>
+                            <s.home.ThingsWeLove_icon relative>
                                 <Image src={icon.icon} alt="" layout="fill" objectFit="contain" />
-                            </s.GridA>
+                            </s.home.ThingsWeLove_icon>
                             <s.GridB>{icon.title}</s.GridB>
                         </s.Grid2a>
                     );
                 })}
-            </s.Grid2>
+            </s.home.ThingsWeLove_line2>
 
             {/* only mobile */}
             {/* white dots floating */}
-            <s.Grid3>
+            <s.home.ThingsWeLove_dots>
                 <s.Grid3a relative>
-                    <Image src={media.white_dots} layout="fill" objectFit="contain" alt="" />
+                    <Image src={media.designs.white_dots} layout="fill" objectFit="contain" alt="" />
                 </s.Grid3a>
-            </s.Grid3>
+            </s.home.ThingsWeLove_dots>
         </s.home.ThingsWeLove>
     );
 };
@@ -128,23 +145,23 @@ export const WeAre = () => {
     return (
         <s.home.WeAre>
             {/* row 1 of 2 */}
-            <s.GridA>
+            <s.home.WeAre_title>
                 <s.Box1>We are</s.Box1>
                 <s.Box2>
                     Global leaders <br /> in Strengthening of Business
                 </s.Box2>
-            </s.GridA>
+            </s.home.WeAre_title>
 
             {/* row 2 of 2 */}
-            <s.GridB>
+            <s.home.WeAre_imageAndDescriptionWrapper>
                 {/* left pics */}
                 <s.Grid1>
                     <ThreePics />
                 </s.Grid1>
                 {/* awards */}
-                <s.Grid2>
+                <s.home.WeAre_descriptionAndAwardWrapper>
                     {/* about cleverkings */}
-                    <s.Box1>
+                    <s.home.WeAre_description>
                         Cleverkings Pvt. Ltd. is one of the pre-eminent software company, engaged in flourishing out-of-box products that aim to bring
                         smartness to a world of business operations where everything goes usual. Our company came into existence in 2016 and became
                         fully integrated in 2017. We are headquartered at Calicut and is one of the most respected IT company, inaugurated and website
@@ -152,13 +169,18 @@ export const WeAre = () => {
                         Startup India, MSME, Kerala startup mission with ISO certification proves we are the top-notch company that blooms around the
                         world. Through innovation, commitment, quality, and superior service we assist you to give a productive outcome to your
                         business.
-                    </s.Box1>
+                        <s.Grid aim="horizontal" pd="1rem 0">
+                            <s.Box bd="rgba(0,0,0,0.1)" wd="auto" pd="0.3rem 1rem 0.1rem" opacity="0.8">
+                                Read More
+                            </s.Box>
+                        </s.Grid>
+                    </s.home.WeAre_description>
                     <s.Box2>
                         <Awards />
                     </s.Box2>
                     {/* <div /> */}
-                </s.Grid2>
-            </s.GridB>
+                </s.home.WeAre_descriptionAndAwardWrapper>
+            </s.home.WeAre_imageAndDescriptionWrapper>
         </s.home.WeAre>
     );
 };
@@ -185,18 +207,18 @@ const Awards = () => {
         <s.home.Awards count={icons.length}>
             <s.Box3>Awards &amp; Recognition</s.Box3>
             <s.Box2>CLEVERKINGS PVT. LTD, AN ISO 9001:2015 CERTIFIED COMPANY</s.Box2>
-            <s.Grid1>
+            <s.home.Awards_imageRow>
                 <s.Grid1a>
                     {icons.map((icon, i) => {
                         return (
-                            <s.Box3 key={i} relative>
+                            <s.home.Awards_imageHolder key={i} relative>
                                 <Image src={icon} alt="" layout="fill" objectFit="contain" />
-                            </s.Box3>
+                            </s.home.Awards_imageHolder>
                         );
                     })}
                     <div />
                 </s.Grid1a>
-            </s.Grid1>
+            </s.home.Awards_imageRow>
         </s.home.Awards>
     );
 };
@@ -206,22 +228,22 @@ export const DiscussProject = () => {
     return (
         <s.home.DiscussProject>
             {/* is absolute */}
-            <s.Grid1>
-                <s.Box1>
-                    <Image src={media.white_dots} alt="" height={200} width={200} />
-                </s.Box1>
-            </s.Grid1>
+            <s.home.DiscussProject_dots>
+                <s.Box ht="19rem" wd="19rem" left="-4rem" relative>
+                    <Image src={media.designs.white_dots} alt="" layout="fill" objectFit="contain" />
+                </s.Box>
+            </s.home.DiscussProject_dots>
             {/* spacing */}
             <div />
             {/* col 1 of 2 - two line text */}
-            <s.Box2>
-                <span style={{ fontWeight: 'bold', fontSize: '1.7rem' }}>T</span>he way we work is to define your problem, and find the best way to
+            <s.home.DiscussProject_line1>
+                <span style={{ fontWeight: 'bold', fontSize: '2.3rem' }}>T</span>he way we work is to define your problem, and find the best way to
                 solve the problem. We Turn Experiences Into Solutions
-            </s.Box2>
+            </s.home.DiscussProject_line1>
             {/* col 2 of 2 - discuss a project */}
             <s.Grid2>
                 <s.Grid>
-                    <Image src={media.right_arrow} alt="" height={50} width={50} />
+                    <Image src={media.designs.right_arrow} alt="" height={50} width={50} />
                 </s.Grid>
                 <s.Box2>Discuss A Project</s.Box2>
             </s.Grid2>
@@ -240,13 +262,13 @@ export const ViewAllProjects = () => {
 
             <s.GridB>
                 <s.Grid1 relative>
-                    <Image src={media.left_arrow} alt="laptop" layout="fill" objectFit="contain" />
+                    <Image src={media.designs.left_arrow} alt="laptop" layout="fill" objectFit="contain" />
                 </s.Grid1>
                 <s.Grid2 relative>
-                    <Image src={media.laptop} alt="laptop" layout="fill" objectFit="contain" />
+                    <Image src={media.designs.laptop} alt="laptop" layout="fill" objectFit="contain" />
                 </s.Grid2>
                 <s.Grid1 relative>
-                    <Image src={media.right_arrow} alt="laptop" layout="fill" objectFit="contain" />
+                    <Image src={media.designs.right_arrow} alt="laptop" layout="fill" objectFit="contain" />
                 </s.Grid1>
             </s.GridB>
 
@@ -291,39 +313,44 @@ export const OurClients = () => {
     ];
     return (
         <s.home.OurClients>
-            <s.GridA>Our Clients</s.GridA>
-            <s.GridB>
+            <s.home.OurClients_header relative>
+                Our Clients
+                {/* <s.Box relative bd="red" bottom="0" right="0" ht="5rem" wd="5rem">
+                    <Image src={media.designs.ribbon} alt="" layout="fill" objectFit="contain" />
+                </s.Box> */}
+            </s.home.OurClients_header>
+            <s.home.OurClients_body>
                 {/* <div /> */}
                 {/* 4 icons */}
-                <s.Grid1>
+                <s.home.OurClients_animationColumn>
                     {four_icons.map((icon, i) => {
                         return (
-                            <s.Grid1a key={i}>
+                            <s.home.OurClients_animationCard key={i}>
                                 <s.Grid2a>
                                     <Image src={icon.icon} alt="" height={40} width={40} />
                                 </s.Grid2a>
                                 <s.Grid2b>{icon.title}</s.Grid2b>
-                            </s.Grid1a>
+                            </s.home.OurClients_animationCard>
                         );
                     })}
-                </s.Grid1>
+                </s.home.OurClients_animationColumn>
                 {/* client list */}
-                <s.Grid2>
-                    <s.Grid2a>
+                <s.home.OurClients_cards>
+                    <s.GridA>
                         {client_icons.map((icon, i) => {
                             return (
-                                <s.Grid3a key={i}>
+                                <s.home.OurClients_card key={i}>
                                     <s.Grid4a relative>
                                         <Image src={icon} alt="" layout="fill" objectFit="contain" />
                                     </s.Grid4a>
-                                </s.Grid3a>
+                                </s.home.OurClients_card>
                             );
                         })}
-                    </s.Grid2a>
-                </s.Grid2>
+                    </s.GridA>
+                </s.home.OurClients_cards>
                 {/* <div style={{ border: '2px solid cyan', width: '100%' }}>aaa</div> */}
                 {/* <div /> */}
-            </s.GridB>
+            </s.home.OurClients_body>
         </s.home.OurClients>
     );
 };
@@ -332,18 +359,18 @@ export const OurClients = () => {
 export const Quote = () => {
     return (
         <s.home.Quote>
-            <s.GridA>
+            <s.home.Quote_header>
                 <s.Box1>
                     Your success is our story,
                     <br />
                     Clients Feedback
                 </s.Box1>
-            </s.GridA>
-            <s.GridB>
+            </s.home.Quote_header>
+            <s.home.Quote_wrapper1>
                 {/* quote icons */}
-                <s.Grid1 relative>
-                    <Image src={media.quote_icon} alt="quote" layout="fill" objectFit="contain" />
-                </s.Grid1>
+                <s.home.Quote_icon relative>
+                    <Image src={media.designs.quote_icon} alt="quote" layout="fill" objectFit="contain" />
+                </s.home.Quote_icon>
                 <s.Box2>
                     The team here is well qualified and has an incredible level of professionalism.
                     <br />
@@ -352,12 +379,12 @@ export const Quote = () => {
                     I would wholeheartedly recommend them to anyone.
                     <br />
                 </s.Box2>
-            </s.GridB>
+            </s.home.Quote_wrapper1>
             {/* quote said by - */}
-            <s.GridC>
+            <s.home.Quote_by>
                 - Ajith Kumar <br />
                 MD, Company
-            </s.GridC>
+            </s.home.Quote_by>
             {/* background image */}
             <s.GridD>
                 <Image src={media.backgrounds.feedback} alt="somoene on phone" layout="fill" objectFit="cover" />
@@ -389,21 +416,21 @@ export const OurThoughts = () => {
                 Follow the Magic Tech
             </s.Box1>
             {/* 3 boxes */}
-            <s.Grid1>
-                <div />
+            <s.home.OurThoughts_PicStripe>
+                {/* <div /> */}
                 {thumbnails.map((thumbnail, i) => {
                     return (
-                        <s.Grid1a key={i}>
-                            <s.Grid2a relative>
+                        <s.home.OurThoughts_Pic_MapContainer key={i}>
+                            <s.home.OurThoughts_Pic relative>
                                 <Image src={thumbnail.pic} layout="fill" objectFit="contain" alt="" />
-                            </s.Grid2a>
+                            </s.home.OurThoughts_Pic>
                             <s.Grid2b>{thumbnail.text}</s.Grid2b>
-                            <div />
-                        </s.Grid1a>
+                            {/* <div /> */}
+                        </s.home.OurThoughts_Pic_MapContainer>
                     );
                 })}
-                <div />
-            </s.Grid1>
+                {/* <div /> */}
+            </s.home.OurThoughts_PicStripe>
             {/* <s.Grid2>
                 <s.Box2>Load More</s.Box2>
             </s.Grid2> */}
@@ -418,7 +445,7 @@ export const LetsTalk = () => {
         <s.home.LetsTalk>
             <s.Box1>Its come to an end. Lets talk now</s.Box1>
             <s.Grid2>
-                <s.Grid2a>
+                <s.home.LetsTalk_wrapInput>
                     <input
                         type="number"
                         value={phone}
@@ -427,9 +454,9 @@ export const LetsTalk = () => {
                             set_phone(e.currentTarget.value);
                         }}
                     />
-                </s.Grid2a>
+                </s.home.LetsTalk_wrapInput>
                 <s.Grid2b relative>
-                    <Image src={media.right_arrow_black} alt="" layout="fill" objectFit="contain" />
+                    <Image src={media.designs.right_arrow_black} alt="" layout="fill" objectFit="contain" />
                 </s.Grid2b>
             </s.Grid2>
 

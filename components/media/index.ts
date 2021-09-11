@@ -20,9 +20,6 @@
 // import * as categories from './categoryIcons/index';
 import mobileMenu from './nav/mobile_menu.svg';
 import threeDots from './nav/right_three_dots.svg';
-import whatsapp from './socialIcons/whatsapp.svg';
-import fb from './socialIcons/fb.svg';
-import twitter from './socialIcons/twitter.svg';
 import seo_smm from './weLove/seosmm.svg';
 import design_and_branding from './weLove/design_branding.svg';
 import app_and_web_dev from './weLove/app_web_development.svg';
@@ -31,34 +28,38 @@ import award_1 from './awards/award_1.png';
 import award_2 from './awards/award_2.png';
 import award_3 from './awards/award_3.png';
 import award_4 from './awards/award_4.png';
-import black_dots from './designs/black_dots.svg';
-import white_dots from './designs/white_dots.svg';
-import right_arrow from './designs/right_arrow.svg';
-import right_arrow_black from './designs/right_arrow_black.svg';
-import left_arrow from './designs/left_arrow.svg';
-import quote_icon from './designs/quote_icon.svg';
-import laptop from './designs/laptop_pic.png';
 import * as ourClients from './ourClients/index';
 import * as backgrounds from './backgrounds/index';
 import * as ourThoughts from './ourThoughts/index';
 import * as footer from './footer/index';
 import * as logos from './logos/index';
 import * as pages from './pages/index';
+import * as social from './socialIcons/index';
+import * as designs from './designs/index';
+// import black_dots from './designs/black_dots.svg';
+// import white_dots from './designs/white_dots.svg';
+// import right_arrow from './designs/right_arrow.svg';
+// import right_arrow_black from './designs/right_arrow_black.svg';
+// import left_arrow from './designs/left_arrow.svg';
+// import quote_icon from './designs/quote_icon.svg';
+// import laptop from './designs/laptop_pic.png';
 
 export {
     pages,
+    social,
     logos,
     footer,
     ourThoughts,
     backgrounds,
-    quote_icon,
     ourClients,
-    laptop,
-    left_arrow,
-    right_arrow,
-    right_arrow_black,
-    white_dots,
-    black_dots,
+    designs,
+    // quote_icon,
+    // laptop,
+    // left_arrow,
+    // right_arrow,
+    // right_arrow_black,
+    // white_dots,
+    // black_dots,
     award_1,
     award_2,
     award_3,
@@ -67,9 +68,6 @@ export {
     business_consultation,
     app_and_web_dev,
     seo_smm,
-    fb,
-    twitter,
-    whatsapp,
     mobileMenu,
     threeDots,
     // enter,

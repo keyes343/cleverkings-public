@@ -159,7 +159,7 @@ export const Footer = () => {
                         />
                     </s.Grid3a>
                     <s.Grid3b relative>
-                        <Image src={media.right_arrow_black} layout="fill" objectFit="contain" alt="" />
+                        <Image src={media.designs.right_arrow_black} layout="fill" objectFit="contain" alt="" />
                     </s.Grid3b>
                 </s.Grid3>
             </s.GridA>
@@ -289,7 +289,7 @@ export const Footer2 = () => {
                         <input placeholder="Enter you email" value={email} onChange={(e) => set_email(e.currentTarget.value)} type="text" />
                     </s.Grid3a>
                     <s.Grid3b relative>
-                        <Image src={media.right_arrow_black} layout="fill" objectFit="contain" alt="" />
+                        <Image src={media.designs.right_arrow_black} layout="fill" objectFit="contain" alt="" />
                     </s.Grid3b>
                     <div />
                 </s.footer.column3>
@@ -351,9 +351,7 @@ export const BelowFooter = () => {
                 })}
             </s.GridA>
             <div />
-            <s.GridB>
-                All rights reserved. <br /> Made with love. Team Clever Kings
-            </s.GridB>
+            <s.GridB>All rights reserved. Made with love. Team Clever Kings</s.GridB>
         </s.footer.BelowFooter>
     );
 };

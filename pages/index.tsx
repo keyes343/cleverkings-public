@@ -12,9 +12,9 @@ const Home: NextPage = () => {
         <>
             <ThemeProvider theme={defaultTheme}>
                 <s.GlobalStyle />
-                <s.Box>
-                    <pages.Homepage />
-                </s.Box>
+                <pages.Homepage />
+                {/* <s.Box>
+                </s.Box> */}
             </ThemeProvider>
         </>
     );

@@ -33,7 +33,7 @@ export const Box = styled.div<t.box.BoxProps>`
     padding: ${(p) => p.pd ?? ''};
     border: ${(p) => (p.bd ? `2px solid ${p.bd}` : '')};
     border-radius: ${(p) => p.radius ?? ''};
-    font-family: ${(p) => p.font ?? 'var(--inter)'};
+    font-family: ${(p) => p.font ?? 'var(--default)'};
     font-weight: ${(p) => (p.bold ? 'bold' : '')};
     font-size: ${(p) => {
         if (p.large) {

@@ -11,19 +11,23 @@ export const Navbar = styled(Grid)<{ count: number }>`
     position: relative;
     @media ${e.device.mobileL} {
         padding: 1.2rem;
-        /* border: 2px solid blue; */
+        /* display: none; */
     }
     /* only deskR̥top */
     ${g.GridA} {
+        gap: 2rem;
+        width: auto;
+        grid-template-columns: ${(p) => `repeat(${p.count},auto)`};
+        /* border: 2px solid blue; */
+        padding: 0.5rem 0;
         @media ${e.device.mobileL} {
             display: none;
         }
-        gap: 1rem;
-        width: auto;
-        grid-template-columns: ${(p) => `repeat(${p.count},auto)`};
+        /* nav option texts */
         ${g.Grid1} {
             width: auto;
             cursor: pointer;
+            font-size: 1.2rem;
         }
     }
     /* only mobile */
@@ -56,17 +60,16 @@ export const Navbar = styled(Grid)<{ count: number }>`
         position: absolute;
         width: auto;
         height: 100%;
-        top: 0;
-        left: 2rem;
+        top: 1rem;
+        left: 4rem;
         /* transform: translateX(-50%); */
-        /* border: 2px solid blue; */
         @media ${e.device.mobileL} {
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
         }
         /* end child */
         ${g.Grid1} {
-            /* border: 2px solid red; */
             border-radius: 60%;
             overflow: hidden;
             padding: 1rem;
@@ -74,12 +77,10 @@ export const Navbar = styled(Grid)<{ count: number }>`
             margin: -0.7rem 0 0;
             ${g.Grid1a} {
                 @media ${e.device.mobileL} {
-                    /* border: 2px solid blue; */
                     margin: 2rem 0 0;
                     width: 5rem;
                     height: 4rem;
                 }
-                /* border: 2px solid blue; */
                 width: 6rem;
                 height: 5rem;
                 color: white;
@@ -142,7 +143,6 @@ export const NavPopup_element = styled(Grid)`
     text-shadow: 1px 1px rgba(62, 116, 126, 0.5); */
     /* padding: 1rem 0; */
     ${g.Box1} {
-        /* border: 2px solid blue; */
         color: rgba(255, 255, 255, 0.8);
         font-size: var(--medium);
         padding: 0 1rem;
