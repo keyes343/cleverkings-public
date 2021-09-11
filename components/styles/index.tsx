@@ -41,8 +41,10 @@ import * as header from './S_Header';
 import * as footer from './S_Footer';
 import * as icons from './S_Icons';
 import * as navPages from './S_NavPages';
+import * as contact from './S_Contact';
 
 export {
+    contact,
     footer,
     navPages,
     icons,

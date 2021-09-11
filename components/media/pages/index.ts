@@ -1,3 +1,5 @@
 import * as about from './about/index';
 import * as home from './home/index';
-export { about, home };
+import * as services from './services/index';
+
+export { about, home, services };

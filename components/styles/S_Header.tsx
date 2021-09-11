@@ -164,8 +164,11 @@ export const LargeTextArea = styled(Grid)`
         width: auto;
     }
     ${g.Box2} {
-        font-size: var(--small);
+        font-size: 1.2rem;
         width: auto;
+        @media ${e.device.mobileL} {
+            font-size: var(--small);
+        }
     } ;
 `;
 

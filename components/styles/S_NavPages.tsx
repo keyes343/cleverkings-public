@@ -220,35 +220,95 @@ export const AboutBody = styled(Grid)`
     }
 `;
 
+// ---------------------------------start
+export const GetQuote = styled(Grid)``;
+export const ViewMore = styled(Box)``;
+export const Text = styled(Box)``;
+``;
+// ---------------------------------end
+
 // section
 export const ServicesBody = styled(Grid)`
-    padding: 3rem;
-    gap: 2rem;
+    padding: 3rem 6rem;
+    gap: 3rem;
     grid-template-columns: 1fr 1fr;
+    @media ${e.device.mobileL} {
+        padding: 3rem 1rem;
+        grid-template-columns: 1fr;
+    }
 
     ${g.Grid1} {
-        border: 1px solid rgba(0, 0, 0, 0.3);
-        gap: 1rem;
-        padding: 0.5rem;
+        padding: 2rem 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        gap: 2rem;
+        /* border: 2px solid blue; */
         height: 100%;
         place-items: start start;
         grid-template-areas:
             'pic heading'
-            'pic text-area';
+            'pic text-area'
+            'getQuote viewMore';
+        @media ${e.device.mobileL} {
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            background-color: rgba(240, 240, 240, 0.5);
+            grid-template-areas:
+                'pic'
+                'heading'
+                'text-area'
+                'viewMore'
+                'getQuote';
+        }
         ${g.Grid1a} {
             /* border: 1px solid; */
             grid-area: pic;
             height: 100%;
+            min-height: 14rem;
             min-width: 12rem;
         }
         ${g.Box1} {
             grid-area: heading;
             font-weight: bold;
             font-size: 1.4rem;
-            /* border: 2px solid blue; */
+            @media ${e.device.mobileL} {
+                text-align: center;
+            }
         }
         ${g.Box2} {
             grid-area: text-area;
+        }
+        ${GetQuote} {
+            grid-area: getQuote;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            opacity: 0.4;
+            padding: 0.7rem 0 0.5rem;
+            cursor: pointer;
+            @media ${e.device.mobileL} {
+                /* display: none; */
+            }
+            :hover {
+                opacity: 1;
+                border: 1px solid rgba(0, 0, 0, 0.8);
+            }
+        }
+        ${ViewMore} {
+            grid-area: viewMore;
+            /* border: 1px solid rgba(0, 0, 0, 0.4); */
+            width: auto;
+            padding: 0.7rem 0 0.5rem;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+            @media ${e.device.mobileL} {
+                /* display: none; */
+                width: 100%;
+                text-align: center;
+                text-decoration: underline;
+                font-weight: bold;
+                /* border: 2px solid blue; */
+            }
+            :hover {
+                color: #1f15a7;
+                transform: scale(1.2) translateX(0.7rem);
+            }
         }
     }
 `;
@@ -261,9 +321,14 @@ export const CookiePolicy = styled(Grid)`
         gap: 1.7rem;
         max-width: 800px;
         /* border: 2px solid blue; */
+        /* border: 2px solid blue; */
         padding: 0 2rem;
         ${g.Box1} {
+            text-align: justify;
+            text-justify: inter-word;
             /* border: 2px solid red; */
+            line-height: 1.5rem;
+            /* width: 20rem; */
         }
         /* ${g.Box2}{
 

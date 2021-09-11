@@ -31,7 +31,7 @@ const navLinks = [
     },
     {
         title: 'Contact Us',
-        link: '/Contact_Us',
+        link: '/Contact',
     },
     {
         title: 'Cookie Policy',
@@ -392,7 +392,6 @@ export const NavPopup = () => {
     const dispatch_settings = useContext(r.settings.DispatchContext)!;
     return (
         <s.nav.NavPopupWrapper isOn={state_settings.active_div === e.DivNames['right-nav-button']}>
-            {/* <s.Box bd="red">dd</s.Box> */}
             <s.nav.NavPopup>
                 {navLinks.map((link, i) => {
                     return (

@@ -1,1 +1,1 @@
-export { Panel } from './H_Panel'; 
+export { Contact } from './H_Contact';
