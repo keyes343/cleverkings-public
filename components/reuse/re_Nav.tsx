@@ -1,8 +1,28 @@
 import React, { useContext } from 'react';
-import { h, r, e, s, t, reuse, media } from './incoming';
+import { h, r, e, s, t, reuse } from './incoming';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+
+const media = 'https://cleverkings-public.s3.ap-south-1.amazonaws.com/media';
+
+const root_designs = media + '/designs/';
+const right_arrow_black = root_designs + 'right_arrow_black.svg';
+
+const root_logos = media + '/logos/';
+const white_logo = root_logos + 'ck_logo_white.svg';
+
+const root_footer = media + '/footer/';
+const call_icon = root_footer + 'call_icon.svg';
+const address_icon = root_footer + 'address_icon.svg';
+const mail_icon = root_footer + 'mail_icon.svg';
+
+const root_nav = media + '/nav/';
+// const mobile_menu = 'https://cleverkings-public.s3.ap-south-1.amazonaws.com/media/nav/mobile_menu.svg';
+const mobile_menu = root_nav + 'mobile_menu.svg';
+const threeDots = root_nav + 'right_three_dots.svg';
+
+// ----------------------
 
 const navLinks = [
     {
@@ -83,11 +103,11 @@ export const Navbar = () => {
             {/* only mobile */}
             <s.GridB>
                 <s.Grid1 relative>
-                    <Image src={media.mobileMenu} alt="menu button" layout="fill" objectFit="contain" />
+                    <Image src={mobile_menu} alt="menu button" layout="fill" objectFit="contain" />
                 </s.Grid1>
                 <div />
                 <s.Grid2 relative onClick={show_nav_options}>
-                    <Image src={media.threeDots} alt="three dots" layout="fill" objectFit="contain" />
+                    <Image src={threeDots} alt="three dots" layout="fill" objectFit="contain" />
                 </s.Grid2>
             </s.GridB>
             {/* center logo for mobile */}
@@ -95,7 +115,7 @@ export const Navbar = () => {
             <s.GridC>
                 <s.Grid1>
                     <s.Grid1a relative>
-                        <Image src={media.logos.white_logo} alt="logo" layout="fill" objectFit="contain" />
+                        <Image src={white_logo} alt="logo" layout="fill" objectFit="contain" />
                     </s.Grid1a>
                 </s.Grid1>
             </s.GridC>
@@ -109,16 +129,16 @@ export const Footer = () => {
     const addresses = [
         {
             lines: ['CLEVERKINGS PVT LTD', 'Thamburan Arcade, Medical College'],
-            icon: media.footer.address_icon,
+            icon: address_icon,
         },
         {
             lines: ['+91 9656 600 009 | +91 8013 666 999'],
-            icon: media.footer.call_icon,
+            icon: call_icon,
             clr: 'rgba(0,0,0,0.4)',
         },
         {
             lines: ['info@cleverkings.com'],
-            icon: media.footer.mail_icon,
+            icon: mail_icon,
         },
     ];
 
@@ -129,7 +149,7 @@ export const Footer = () => {
             {/* <Image src={media.right_arrow} alt="" layout="fill" objectFit="cover" /> */}
             <s.GridA>
                 <s.Grid2 relative>
-                    <Image src={media.logos.white_logo} alt="" layout="fill" objectFit="contain" />
+                    <Image src={white_logo} alt="" layout="fill" objectFit="contain" />
                 </s.Grid2>
                 <s.Grid1>
                     {addresses.map((address, i) => {
@@ -159,7 +179,7 @@ export const Footer = () => {
                         />
                     </s.Grid3a>
                     <s.Grid3b relative>
-                        <Image src={media.designs.right_arrow_black} layout="fill" objectFit="contain" alt="" />
+                        <Image src={right_arrow_black} layout="fill" objectFit="contain" alt="" />
                     </s.Grid3b>
                 </s.Grid3>
             </s.GridA>
@@ -189,16 +209,16 @@ export const Footer2 = () => {
     const addresses = [
         {
             lines: ['CLEVERKINGS PVT LTD', 'Thamburan Arcade, Medical College'],
-            icon: media.footer.address_icon,
+            icon: address_icon,
         },
         {
             lines: ['+91 9656 600 009 | +91 8013 666 999'],
-            icon: media.footer.call_icon,
+            icon: call_icon,
             clr: '#fddab3',
         },
         {
             lines: ['info@cleverkings.com'],
-            icon: media.footer.mail_icon,
+            icon: mail_icon,
         },
     ];
 
@@ -253,7 +273,7 @@ export const Footer2 = () => {
             {/* <Image src={media.right_arrow} alt="" layout="fill" objectFit="cover" /> */}
             <s.footer.MainWrapper>
                 <s.footer.LogoWrapper area="logo" relative>
-                    <Image src={media.logos.white_logo} alt="" layout="fill" objectFit="contain" />
+                    <Image src={white_logo} alt="" layout="fill" objectFit="contain" />
                 </s.footer.LogoWrapper>
                 <s.footer.column1 count={3}>
                     <s.footer.title>Quick Links</s.footer.title>
@@ -289,7 +309,7 @@ export const Footer2 = () => {
                         <input placeholder="Enter you email" value={email} onChange={(e) => set_email(e.currentTarget.value)} type="text" />
                     </s.Grid3a>
                     <s.Grid3b relative>
-                        <Image src={media.designs.right_arrow_black} layout="fill" objectFit="contain" alt="" />
+                        <Image src={right_arrow_black} layout="fill" objectFit="contain" alt="" />
                     </s.Grid3b>
                     <div />
                 </s.footer.column3>
@@ -339,20 +359,21 @@ export const BelowFooter = () => {
             link: '',
         },
     ];
+    const S = s.footer;
     return (
-        <s.footer.BelowFooter>
+        <S.BelowFooter>
             <s.GridA>
                 {leftList.map((list, i) => {
                     return (
-                        <s.Grid1 key={i}>
+                        <S.Text key={i}>
                             {i !== 0 && '|'} {list.title}
-                        </s.Grid1>
+                        </S.Text>
                     );
                 })}
             </s.GridA>
             <div />
-            <s.GridB>All rights reserved. Made with love. Team Clever Kings</s.GridB>
-        </s.footer.BelowFooter>
+            <S.Text>All rights reserved. Made with love. Team Clever Kings</S.Text>
+        </S.BelowFooter>
     );
 };
 export const BelowFooter2 = () => {

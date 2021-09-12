@@ -25,9 +25,9 @@ const Homepage = () => {
             <reuse.home.Quote />
             <reuse.home.OurThoughts />
             <reuse.home.LetsTalk />
-            {/* 
+
             <reuse.nav.Footer />
-            <reuse.nav.BelowFooter /> */}
+            <reuse.nav.BelowFooter />
             {/* floating popup for nav */}
             <reuse.nav.NavPopup />
         </s.Grid>

@@ -27,6 +27,7 @@ const left_arrow = root_designs + 'left_arrow.svg';
 const quote_icon = root_designs + 'quote_icon.svg';
 const ribbon = root_designs + 'ribbon.svg';
 const right_arrow = root_designs + 'right_arrow.svg';
+const right_arrow_black = root_designs + 'right_arrow_black.svg';
 
 const root_awards = media + '/awards/';
 const award_1 = root_awards + 'award_1.png';
@@ -47,18 +48,18 @@ const clients_04 = root_ourClients_list + 'Clients_04.svg';
 const clients_05 = root_ourClients_list + 'Clients_05.svg';
 const clients_06 = root_ourClients_list + 'Clients_06.svg';
 const clients_07 = root_ourClients_list + 'Clients_07.svg';
-const clients_08 = root_ourClients_list + 'Clients_08.svg';
-const clients_10 = root_ourClients_list + 'Clients_10.svg';
 // const clients_10 = 'https://cleverkings-public.s3.ap-south-1.amazonaws.com/media/ourClients/clientList/Clients-10.svg';
-const clients_11 = root_ourClients_list + 'Clients_11.svg';
-const clients_12 = root_ourClients_list + 'Clients_12.svg';
-const clients_13 = root_ourClients_list + 'Clients_13.svg';
-const clients_14 = root_ourClients_list + 'Clients_14.svg';
-const clients_15 = root_ourClients_list + 'Clients_15.svg';
+const clients_08 = root_ourClients_list + 'Clients-08.svg';
+const clients_10 = root_ourClients_list + 'Clients-10.svg';
+const clients_11 = root_ourClients_list + 'Clients-11.svg';
+const clients_12 = root_ourClients_list + 'Clients-12.svg';
+const clients_13 = root_ourClients_list + 'Clients-13.svg';
+const clients_14 = root_ourClients_list + 'Clients-14.svg';
+const clients_15 = root_ourClients_list + 'Clients-15.svg';
 
 const root_backgrounds = media + '/backgrounds/';
 const feedback = root_backgrounds + 'feedback_bg.png';
-const lets_talk = root_backgrounds + 'lets_talk_bg.png';
+const lets_talk = root_backgrounds + 'lets_talk_bg.jpg';
 
 const root_ourThoughts = media + '/ourThoughts/';
 const blog_1 = root_ourThoughts + 'blog_1.png';
@@ -178,31 +179,32 @@ export const ThingsWeLove = () => {
             title: 'Business Consultation',
         },
     ];
+    const S = s.home;
     return (
-        <s.home.ThingsWeLove>
-            <s.home.ThingsWeLove_line1>Things &nbsp;We &nbsp;L o v e &nbsp;to &nbsp;do</s.home.ThingsWeLove_line1>
+        <S.ThingsWeLove>
+            <S.ThingsWeLove_line1>Things &nbsp;We &nbsp;L o v e &nbsp;to &nbsp;do</S.ThingsWeLove_line1>
             <div />
-            <s.home.ThingsWeLove_line2>
+            <S.ThingsWeLove_line2>
                 {icons.map((icon, i) => {
                     return (
                         <s.Grid2a key={i}>
-                            <s.home.ThingsWeLove_icon relative>
+                            <S.ThingsWeLove_icon relative>
                                 <Image src={icon.icon} alt="" layout="fill" objectFit="contain" />
-                            </s.home.ThingsWeLove_icon>
+                            </S.ThingsWeLove_icon>
                             <s.GridB>{icon.title}</s.GridB>
                         </s.Grid2a>
                     );
                 })}
-            </s.home.ThingsWeLove_line2>
+            </S.ThingsWeLove_line2>
 
             {/* only mobile */}
             {/* white dots floating */}
-            <s.home.ThingsWeLove_dots>
-                <s.Grid3a relative>
+            <S.ThingsWeLove_dots>
+                <S.Pic>
                     <Image src={white_dots} layout="fill" objectFit="contain" alt="" />
-                </s.Grid3a>
-            </s.home.ThingsWeLove_dots>
-        </s.home.ThingsWeLove>
+                </S.Pic>
+            </S.ThingsWeLove_dots>
+        </S.ThingsWeLove>
     );
 };
 
@@ -368,13 +370,14 @@ export const OurClients = () => {
     ];
 
     const client_icons = [
-        // clients_02,
-        // clients_04,
-        // clients_05,
-        // clients_06,
-        // clients_07,
-        // clients_08,
+        clients_02,
+        clients_04,
+        clients_05,
+        clients_06,
+        clients_07,
+        clients_08,
         clients_10,
+        // 'https://cleverkings-public.s3.ap-south-1.amazonaws.com/media/ourClients/clientList/Clients-10.svg',
         clients_11,
         clients_12,
         clients_13,
@@ -408,17 +411,17 @@ export const OurClients = () => {
                 </S.OurClients_animationColumn>
                 {/* client list */}
                 <S.OurClients_cards>
-                    <s.GridA>
+                    <S.Wrapper1>
                         {client_icons.map((icon, i) => {
                             return (
                                 <S.OurClients_card key={i}>
-                                    <s.Grid4a relative>
+                                    <S.Pic>
                                         <Image src={icon} alt="" layout="fill" objectFit="contain" />
-                                    </s.Grid4a>
+                                    </S.Pic>
                                 </S.OurClients_card>
                             );
                         })}
-                    </s.GridA>
+                    </S.Wrapper1>
                 </S.OurClients_cards>
                 {/* <div style={{ border: '2px solid cyan', width: '100%' }}>aaa</div> */}
                 {/* <div /> */}
@@ -444,14 +447,14 @@ export const Quote = () => {
                 <s.home.Quote_icon relative>
                     <Image src={quote_icon} alt="quote" layout="fill" objectFit="contain" />
                 </s.home.Quote_icon>
-                <s.Box2>
+                <S.Text>
                     The team here is well qualified and has an incredible level of professionalism.
                     <br />
                     Good attitude, communication skills and timely delivery.
                     <br />
                     I would wholeheartedly recommend them to anyone.
                     <br />
-                </s.Box2>
+                </S.Text>
             </s.home.Quote_wrapper1>
             {/* quote said by - */}
             <s.home.Quote_by>
@@ -482,12 +485,16 @@ export const OurThoughts = () => {
             text: `Leaders, Don’t Be Afraid to Talk About Your Fears and Anxieties`,
         },
     ];
+    const S = s.home;
     return (
         <s.home.OurThoughts>
-            <s.Box1>
+            <S.Text>
                 Our Thoughts &amp; Insights <br />
                 Follow the Magic Tech
-            </s.Box1>
+                <S.Ribbon>
+                    <Image src={ribbon} alt="" layout="fill" objectFit="contain" />
+                </S.Ribbon>
+            </S.Text>
             {/* 3 boxes */}
             <s.home.OurThoughts_PicStripe>
                 {/* <div /> */}
@@ -514,11 +521,12 @@ export const OurThoughts = () => {
 // section
 export const LetsTalk = () => {
     const [phone, set_phone] = React.useState<string>('');
+    const S = s.home;
     return (
-        <s.home.LetsTalk>
-            <s.Box1>Its come to an end. Lets talk now</s.Box1>
-            <s.Grid2>
-                <s.home.LetsTalk_wrapInput>
+        <S.LetsTalk>
+            <S.Text>Its come to an end. Lets talk now</S.Text>
+            <S.Wrapper1>
+                <S.LetsTalk_wrapInput>
                     <input
                         type="number"
                         value={phone}
@@ -527,15 +535,15 @@ export const LetsTalk = () => {
                             set_phone(e.currentTarget.value);
                         }}
                     />
-                </s.home.LetsTalk_wrapInput>
+                </S.LetsTalk_wrapInput>
                 <s.Grid2b relative>
                     <Image src={right_arrow} alt="" layout="fill" objectFit="contain" />
                 </s.Grid2b>
-            </s.Grid2>
+            </S.Wrapper1>
 
-            <s.Box2 relative>
+            <S.Pic>
                 <Image src={lets_talk} layout="fill" objectFit="cover" alt="" />
-            </s.Box2>
-        </s.home.LetsTalk>
+            </S.Pic>
+        </S.LetsTalk>
     );
 };

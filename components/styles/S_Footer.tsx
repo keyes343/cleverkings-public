@@ -3,7 +3,8 @@ import { t, e } from './incoming';
 import { Box, Grid } from './S_Box';
 import * as g from './S_Box';
 
-export const title = styled(Grid)``;
+export const title = styled(Box)``;
+export const Text = styled(Box)``;
 export const divider = styled(Grid)``;
 export const linkWrapper = styled(Grid)``;
 export const column = styled(Grid)<{ count: number; mob_off?: boolean }>`
@@ -131,6 +132,7 @@ export const BelowFooter = styled(Grid)`
     color: white;
     grid-template-columns: auto 1fr auto;
     padding: 1rem 2rem;
+    /* border: 2px solid blue; */
     @media ${e.device.mobileL} {
         grid-template-columns: 1fr;
         /* display: none; */
@@ -140,7 +142,9 @@ export const BelowFooter = styled(Grid)`
     ${g.GridA} {
         grid-template-columns: repeat(4, auto);
         gap: 0.4rem;
+        font-size: 0.8rem;
         width: auto;
+
         @media ${e.device.mobileL} {
             /* grid-template-columns: repeat(2, minm); */
 
@@ -149,7 +153,7 @@ export const BelowFooter = styled(Grid)`
             width: auto;
             max-width: 70vw;
         }
-        ${g.Grid1} {
+        ${Text} {
             font-size: var(--smallest);
             width: auto;
             @media ${e.device.mobileL} {
@@ -162,11 +166,11 @@ export const BelowFooter = styled(Grid)`
             }
         }
     }
-    ${g.GridB} {
-        grid-template-columns: 1fr;
+    ${Text} {
+        /* grid-template-columns: 1fr; */
         /* border: 2px solid blue; */
         text-align: center;
-        font-size: var(--smallest);
+        font-size: 0.8rem;
     } ;
 `;
 

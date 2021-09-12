@@ -17,6 +17,10 @@ export const Header = styled(Grid)`
 export const Pic = styled(Box)`
     position: relative;
 `;
+export const Wrapper1 = styled(Grid)``;
+export const Wrapper2 = styled(Grid)``;
+export const Wrapper3 = styled(Grid)``;
+
 const circle0 = styled(Grid)`
     height: 40rem;
     width: 40rem;
@@ -43,6 +47,7 @@ export const circle2 = styled(circle0)`
 `;
 export const Ribbon = styled(Grid)`
     position: relative;
+    transform: rotate(-45deg);
 `;
 export const Laptop = styled(Grid)``;
 export const MovingDots = styled(Grid)``;
@@ -232,7 +237,7 @@ export const ThingsWeLove_dots = styled(Grid)``;
 // section
 export const ThingsWeLove = styled(Grid)`
     /* grid-template-rows: auto 1fr auto; */
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.87);
     /* height: 50vh; */
     overflow: hidden;
     z-index: -100;
@@ -241,6 +246,7 @@ export const ThingsWeLove = styled(Grid)`
     padding: 5rem;
     position: relative;
     @media ${e.device.mobileL} {
+        background-color: rgba(0, 0, 0, 0.88);
         /* display: none; */
         padding: 4rem 2rem;
     }
@@ -317,7 +323,7 @@ export const ThingsWeLove = styled(Grid)`
             top: -4rem;
             right: -4rem;
         }
-        ${g.Grid3a} {
+        ${Pic} {
             height: 17rem;
             width: 17rem;
             /* border: 2px solid bÆlue; */
@@ -593,6 +599,9 @@ export const DiscussProject = styled(Grid)`
         }
     }
     ${g.Grid2} {
+        @media ${e.device.mobileL} {
+            gap: 1rem;
+        }
         ${g.Grid3} {
         }
         ${g.Box2} {
@@ -729,6 +738,10 @@ export const OurClients = styled(Grid)`
                     /* border: 1px solid white; */
                     width: 5rem;
                     height: 5rem;
+                    @media ${e.device.mobileL} {
+                        width: 3rem;
+                        height: 3rem;
+                    }
                 }
                 /* title */
                 ${g.Grid2b} {
@@ -738,27 +751,26 @@ export const OurClients = styled(Grid)`
                     max-width: 6rem;
                     color: #bbb5c9;
                     @media ${e.device.mobileL} {
-                        font-size: 1.3rem;
+                        font-size: 1.1rem;
                     }
                 }
             }
         }
         ${OurClients_cards} {
-            /* border: 2px solid yellow; */
             overflow: auto;
-            /* height: 100%; */
             @media ${e.device.mobileL} {
                 /* display: none; */
             }
-            ${g.GridA} {
+            ${Wrapper1} {
                 gap: 3rem 1rem;
                 grid-template-columns: repeat(4, 11rem);
+                width: auto;
                 /* height: 100%; */
                 @media ${e.device.mobileL} {
-                    grid-template-columns: repeat(4, 7rem);
-                    gap: 1rem 2rem;
-                    width: 150vw;
-                    padding: 0 2rem;
+                    grid-template-columns: repeat(6, auto);
+                    gap: 1rem 0.5rem;
+                    /* width: 150vw; */
+                    padding: 2rem;
                 }
                 ${OurClients_card} {
                     padding: 0.5rem;
@@ -767,13 +779,15 @@ export const OurClients = styled(Grid)`
                     min-height: 5rem;
                     /* width: auto; */
                     /* min-width: 7rem; */
-                    ${g.Grid4a} {
+                    @media ${e.device.mobileL} {
+                    }
+                    ${Pic} {
                         padding: 0.7rem 0;
                         min-height: 6rem;
                         /* transform: scale(1.5); */
                         @media ${e.device.mobileL} {
                             min-height: 4rem;
-
+                            min-width: 9rem;
                             /* padding: 1rem; */
                         }
                     }
@@ -788,13 +802,13 @@ export const Quote_header = styled(Grid)``;
 export const Quote_icon = styled(Grid)``;
 export const Quote_wrapper1 = styled(Grid)``;
 export const Quote_by = styled(Grid)``;
-export const Text = styled(Grid)``;
+export const Text = styled(Box)``;
 // -------------------------------------------end
 
 // section
 export const Quote = styled(Grid)`
     --height: 35rem;
-    --mobheight: 40rem;
+    --mobheight: 45rem;
     --pad: 4rem 6rem;
     --padMobile: 4rem 2rem;
 
@@ -802,10 +816,8 @@ export const Quote = styled(Grid)`
         /* display: none; */
         height: var(--mobheight);
     }
-    /* padding: 2rem 4rem; */
     gap: 2rem;
     position: relative;
-    /* border: 2px solid blue; */
     height: var(--height);
     ${Quote_header} {
         position: absolute;
@@ -813,12 +825,10 @@ export const Quote = styled(Grid)`
         top: 0;
         left: 0;
         width: auto;
-        /* border: 2px solid blue; */
         @media ${e.device.mobileL} {
             padding: var(--padMobile);
             /* left: 2rem; */
             height: auto;
-            border: 2px solid cyan;
         }
         ${Text} {
             opacity: 0.8;
@@ -828,7 +838,6 @@ export const Quote = styled(Grid)`
                 position: relative;
                 /* display: none; */
                 font-size: 1.8rem;
-                border: 2px solid red;
             }
         }
     }
@@ -859,18 +868,18 @@ export const Quote = styled(Grid)`
                 transform: translate(0, 0);
             }
         }
-        ${g.Box2} {
+        ${Text} {
             opacity: 0.6;
             /* font-weight: bold; */
             font-style: italic;
             line-height: 2rem;
             font-size: 1.4rem;
             @media ${e.device.mobileL} {
-                font-size: 1.2rem;
+                font-size: 1rem;
                 font-weight: bold;
                 /* border: 2px solid blue; */
                 max-width: 18rem;
-                opacity: 0.5;
+                opacity: 0.7;
             }
         }
     }
@@ -893,7 +902,7 @@ export const Quote = styled(Grid)`
         height: var(--height);
         top: 0;
         left: 0;
-        /* height: 100%; */
+        height: 100%;
         width: 100;
     }
 `;
@@ -911,22 +920,40 @@ export const OurThoughts = styled(Grid)`
     position: relative;
     padding: var(--pad);
     place-items: end center;
-    gap: 2rem;
+    gap: 6rem;
     @media ${e.device.mobileL} {
         /* border: 2px solid blue; */
-        padding: 2rem;
-        margin: -4rem 0 0;
+        padding: 4rem 2rem;
+        /* margin: -4rem 0 0; */
         /* height: auto; */
         /* display: none; */
     }
-    ${g.Box1} {
+    ${Text} {
         /* position: absolute; */
         /* width: auto; */
         /* top: 3rem; */
         font-weight: bold;
+        /* border: 2px solid blue; */
         /* left: 3rem; */
-        font-size: var(--larger);
+        /* border: 2px solid blue; */
+        font-size: var(--large);
+        position: relative;
         @media ${e.device.mobileL} {
+        }
+        ${Ribbon} {
+            position: absolute;
+            width: auto;
+            height: 7rem;
+            width: 7rem;
+            /* border: 2px solid red; */
+            bottom: -5rem;
+            left: 10rem;
+            @media ${e.device.mobileL} {
+                /* height: 7rem;
+                width: 7rem;
+                bottom: -5rem;
+                left: 10rem; */
+            }
             /* border: 2px solid blue; */
         }
     }
@@ -1000,6 +1027,7 @@ export const LetsTalk_wrapInput = styled(Grid)``;
 // section
 export const LetsTalk = styled(Grid)`
     --height: 20rem;
+    --mobHeight: 15rem;
     --pad: 4rem 6rem;
     padding: var(--pad);
     height: var(--height);
@@ -1009,18 +1037,21 @@ export const LetsTalk = styled(Grid)`
     place-items: center start;
     gap: 1rem;
     @media ${e.device.mobileL} {
+        place-items: center;
+        height: var(--mobHeight);
         /* display: none; */
         padding: 2rem 1rem;
     }
-    // row - 1
-    ${g.Box1} {
+    ${Text} {
         font-size: var(--largest);
         @media ${e.device.mobileL} {
-            font-size: var(--medium);
+            font-size: var(--large);
+            text-align: center;
+            /* border: 2px solid blue; */
+            max-width: 17rem;
         }
     }
-    // row - 2
-    ${g.Grid2} {
+    ${Wrapper1} {
         grid-template-columns: 25rem 5rem;
         width: auto;
         @media ${e.device.mobileL} {
@@ -1030,13 +1061,15 @@ export const LetsTalk = styled(Grid)`
             /* border: 2px solid blue; */
             input {
                 outline: none;
-                padding: 1.3rem 1rem 0.7rem;
+                padding: 0.7rem 1rem;
                 width: 100%;
+                font-size: var(--large);
                 ::placeholder {
                     color: #9b9999;
-                    font-size: var(--large);
                 }
                 @media ${e.device.mobileL} {
+                    font-size: var(--medium);
+                    /* border: 2px solid blue; */
                     /* display: none; */
                 }
             }
@@ -1047,11 +1080,14 @@ export const LetsTalk = styled(Grid)`
             cursor: pointer;
         }
     }
-    ${g.Box2} {
+    ${Pic} {
         position: absolute;
         height: var(--height);
         z-index: -10;
         filter: brightness(0.25);
+        @media ${e.device.mobileL} {
+            height: var(--mobHeight);
+        }
     }
     /* ${g.GridA} {
     } */
