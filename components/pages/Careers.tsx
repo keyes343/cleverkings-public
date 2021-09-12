@@ -15,3 +15,14 @@ const Careers: React.FC<CareersProps> = () => {
 };
 
 export default Careers;
+
+const Career_body = () => {
+    const S = s.career;
+    return (
+        <S.Career_body>
+            <S.JoinUs>
+                <S.RightSkills>Right Skills Right Jobs - Join with us</S.RightSkills>
+            </S.JoinUs>
+        </S.Career_body>
+    );
+};

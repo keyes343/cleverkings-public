@@ -42,8 +42,10 @@ import * as footer from './S_Footer';
 import * as icons from './S_Icons';
 import * as navPages from './S_NavPages';
 import * as contact from './S_Contact';
+import * as career from './S_Career';
 
 export {
+    career,
     contact,
     footer,
     navPages,
