@@ -57,7 +57,7 @@ export const Navbar = () => {
         });
     };
 
-    // only mobile
+    // only Mobile
     const show_nav_options = (evt: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         evt.stopPropagation();
         dispatch_settings({
