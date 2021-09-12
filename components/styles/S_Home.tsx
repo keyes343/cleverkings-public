@@ -14,6 +14,9 @@ export const Header = styled(Grid)`
 `;
 
 // -------------------------------------------start
+export const Pic = styled(Box)`
+    position: relative;
+`;
 const circle0 = styled(Grid)`
     height: 40rem;
     width: 40rem;
@@ -38,7 +41,9 @@ export const circle2 = styled(circle0)`
         bottom: -37rem;
     }
 `;
-export const Ribbon = styled(Grid)``;
+export const Ribbon = styled(Grid)`
+    position: relative;
+`;
 export const Laptop = styled(Grid)``;
 export const MovingDots = styled(Grid)``;
 // -------------------------------------------end
@@ -227,7 +232,7 @@ export const ThingsWeLove_dots = styled(Grid)``;
 // section
 export const ThingsWeLove = styled(Grid)`
     /* grid-template-rows: auto 1fr auto; */
-    background-color: ${(p) => p.theme.primary};
+    background-color: rgba(0, 0, 0, 0.8);
     /* height: 50vh; */
     overflow: hidden;
     z-index: -100;
@@ -345,8 +350,11 @@ export const WeAre = styled(Grid)`
     }
     padding: 7rem 7rem;
     ${Title} {
+        position: relative;
+        place-items: center start;
         @media ${e.device.mobileL} {
             /* border: 2px solid red; */
+            gap: 1rem;
             padding: 2rem;
         }
         ${g.Box1} {
@@ -359,29 +367,51 @@ export const WeAre = styled(Grid)`
             }
         }
         ${g.Box2} {
-            @media ${e.device.mobileL} {
-                font-size: var(--larger);
-                /* border: 2px solid blue; */
-            }
             font-size: 2.6rem;
             font-weight: bold;
+            /* max-width: 40rem; */
             /* border: 2px solid blue; */
+            @media ${e.device.mobileL} {
+                font-size: var(--large);
+                /* border: 2px solid blue; */
+            }
+            /* border: 2px solid blue; */
+        }
+        ${Ribbon} {
+            position: absolute;
+            /* border: 2px solid blue; */
+            height: 7rem;
+            width: 7rem;
+            bottom: -4rem;
+            left: 22rem;
+            transform: rotate(-40deg);
+            @media ${e.device.mobileL} {
+                height: 6rem;
+                width: 6rem;
+                bottom: -2rem;
+                right: 3rem;
+                left: auto;
+            }
         }
     }
     ${ImageAndDescriptionWrapper} {
-        @media ${e.device.mobileL} {
-            grid-template-columns: 1fr;
-            /* border: 2px solid red; */
-        }
         /* border: 2px solid blue; */
         grid-template-columns: 1fr 1.5fr;
         gap: 3rem;
+        @media ${e.device.mobileL} {
+            gap: 0rem;
+            grid-template-columns: 1fr;
+            /* border: 2px solid red; */
+        }
         ${ThreePics_wrapper} {
-            border: 2px solid blue;
             height: 100%;
             ${ThreePics} {
-                border: 2px solid red;
+                /* border: 2px solid blue; */
+                height: 100%;
+                --webHeight: 14rem;
+                --mobHeight: 11rem;
                 grid-template-columns: 1fr 1fr;
+                /* grid-template-rows: repeat(8, auto); */
                 grid-template-areas:
                     '. bb'
                     'aa bb'
@@ -389,34 +419,36 @@ export const WeAre = styled(Grid)`
                     'aa cc'
                     'aa cc'
                     '. cc';
-                gap: 2rem;
+                gap: 1rem;
                 @media ${e.device.mobileL} {
-                    padding: 1rem 1rem;
+                    padding: 1rem 15%;
                     gap: 1rem;
                     /* border: 2px solid blue; */
                 }
                 ${g.Grid1} {
-                    /* border: 2px solid cyan; */
+                    height: 100%;
                     grid-area: aa;
+                    min-height: var(--webHeight);
+                    @media ${e.device.mobileL} {
+                        min-height: var(--mobHeight);
+                    }
                 }
                 ${g.Grid2} {
-                    height: 1rem;
+                    height: 100%;
                     /* width: 2rem; */
                     grid-area: bb;
-                    /* border: 2px solid orange; */
-                    min-height: 17rem;
+                    min-height: var(--webHeight);
                     @media ${e.device.mobileL} {
-                        min-height: 18rem;
+                        min-height: var(--mobHeight);
                     }
                 }
                 ${g.Grid3} {
                     grid-area: cc;
-                    height: 1rem;
-                    /* border: 2px solid orange; */
-                    min-height: 17rem;
+                    height: 100%;
+                    min-height: var(--webHeight);
                     /* width: 20rem; */
                     @media ${e.device.mobileL} {
-                        min-height: 18rem;
+                        min-height: var(--mobHeight);
                     }
                 }
             }
@@ -435,10 +467,13 @@ export const WeAre = styled(Grid)`
                 max-width: 900px;
                 opacity: 0.7;
                 @media ${e.device.mobileL} {
-                    font-size: 1.5rem;
-                    line-height: 2.7rem;
+                    /* font-size: 1rem; */
+                    line-height: 2rem;
                     opacity: 0.7;
                     padding: 1rem 2rem;
+                    font-family: var(--inter);
+                    text-align: justify;
+                    text-justify: inter-word;
                 }
             }
             /* awards section */
@@ -477,9 +512,12 @@ export const Awards = styled(Grid)<{ count: number }>`
         /* border: 2px solid blue; */
         font-size: var(--medium);
         @media ${e.device.mobileL} {
-            font-size: var(--medium);
             padding: 1rem 2rem;
-            font-weight: normal;
+            font-size: var(--normal);
+            font-family: var(--inter);
+            font-weight: bold;
+            opacity: 0.8;
+            line-height: 1.8rem;
         }
     }
     ${Awards_imageRow} {
@@ -621,7 +659,7 @@ export const ViewAllProjects = styled(Grid)`
     }
 `;
 
-// -------------------------------------------start
+//  -------------------------------------------start
 export const OurClients_header = styled(Grid)``;
 export const OurClients_body = styled(Grid)``;
 export const OurClients_animationColumn = styled(Grid)``;
@@ -644,6 +682,11 @@ export const OurClients = styled(Grid)`
         font-size: ${(p) => p.theme.font.larger};
         /* border: 2px solid blue; */
         font-weight: bold;
+
+        ${Ribbon} {
+            display: none;
+            /* get white ribbon first, then turn on display, currently we have black ribbon */
+        }
     }
     /* 4 icons */
     ${OurClients_body} {
@@ -682,10 +725,10 @@ export const OurClients = styled(Grid)`
                     /* display: none; */
                 }
                 /* img wrapper */
-                ${g.Grid2a} {
+                ${Pic} {
                     /* border: 1px solid white; */
-                    /* width: 5rem;
-                    height: 5rem; */
+                    width: 5rem;
+                    height: 5rem;
                 }
                 /* title */
                 ${g.Grid2b} {
@@ -745,6 +788,7 @@ export const Quote_header = styled(Grid)``;
 export const Quote_icon = styled(Grid)``;
 export const Quote_wrapper1 = styled(Grid)``;
 export const Quote_by = styled(Grid)``;
+export const Text = styled(Grid)``;
 // -------------------------------------------end
 
 // section
@@ -752,6 +796,7 @@ export const Quote = styled(Grid)`
     --height: 35rem;
     --mobheight: 40rem;
     --pad: 4rem 6rem;
+    --padMobile: 4rem 2rem;
 
     @media ${e.device.mobileL} {
         /* display: none; */
@@ -770,14 +815,20 @@ export const Quote = styled(Grid)`
         width: auto;
         /* border: 2px solid blue; */
         @media ${e.device.mobileL} {
-            left: 2rem;
+            padding: var(--padMobile);
+            /* left: 2rem; */
+            height: auto;
+            border: 2px solid cyan;
         }
-        ${g.Box1} {
+        ${Text} {
             opacity: 0.8;
             font-size: var(--larger);
             font-weight: bold;
             @media ${e.device.mobileL} {
+                position: relative;
+                /* display: none; */
                 font-size: 1.8rem;
+                border: 2px solid red;
             }
         }
     }

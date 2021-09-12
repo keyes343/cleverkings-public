@@ -34,7 +34,7 @@ const award_2 = root_awards + 'award_2.png';
 const award_3 = root_awards + 'award_3.png';
 const award_4 = root_awards + 'award_4.png';
 
-const root_ourClients = media + '/awards/ourClients/';
+const root_ourClients = media + '/ourClients/';
 const awesome_people = root_ourClients + 'awesome_people.svg';
 const clients_world_wild = root_ourClients + 'clients_world_wild.svg';
 const project_delivered = root_ourClients + 'project_delivered.svg';
@@ -68,9 +68,9 @@ const blog_3 = root_ourThoughts + 'blog_3.png';
 // pages
 const root_pages = media + '/pages/';
 const root_pages_home = media + '/pages/home/';
-// const who_we_are_1 = root_pages_home + 'who_we_are_1.png';
-const who_we_are_1 = 'https://cleverkings-public.s3.ap-south-1.amazonaws.com/media/pages/home/who_we_are_1.png';
-const who_we_are_2 = root_pages_home + 'who_we_are_2.png';
+const who_we_are_1 = root_pages_home + 'who_we_are_1.jpg';
+// const who_we_are_1 = 'https://cleverkings-public.s3.ap-south-1.amazonaws.com/media/pages/home/who_we_are_1.png';
+const who_we_are_2 = root_pages_home + 'who_we_are_2.jpg';
 // const who_we_are_2 = 'https://cleverkings-public.s3.ap-south-1.amazonaws.com/media/pages/home/who_we_are_2.png';
 const who_we_are_3 = root_pages_home + 'who_we_are_3.jpg';
 // --------------------------------------------------------------------------------------------------------------------
@@ -89,7 +89,7 @@ export const ThingsThatMatter = () => {
 
             <s.home.circle1 />
             <s.home.circle2 />
-            {/* <s.home.Ribbon>{<Image src={media.designs.ribbon} alt="" layout="fill" objectFit="contain" />}</s.home.Ribbon> */}
+            <s.home.Ribbon>{<Image src={ribbon} alt="" layout="fill" objectFit="contain" />}</s.home.Ribbon>
         </s.home.ThingsThatMatter>
     );
 };
@@ -215,8 +215,11 @@ export const WeAre = () => {
             <S.Title>
                 <s.Box1>We are</s.Box1>
                 <s.Box2>
-                    Global leaders <br /> in Strengthening of Business
+                    Global leaders in <br /> Strengthening of Business
                 </s.Box2>
+                <S.Ribbon>
+                    <Image src={ribbon} layout="fill" objectFit="contain" alt="" />
+                </S.Ribbon>
             </S.Title>
 
             {/* row 2 of 2 */}
@@ -247,7 +250,7 @@ export const WeAre = () => {
                         world. Through innovation, commitment, quality, and superior service we assist you to give a productive outcome to your
                         business.
                         <s.Grid aim="horizontal" pd="1rem 0">
-                            <s.Box bd="rgba(0,0,0,0.1)" wd="auto" pd="0.3rem 1rem 0.1rem" opacity="0.8">
+                            <s.Box wd="auto" pd="0.3rem 1rem 0.1rem 0" bold opacity="0.8">
                                 Read More
                             </s.Box>
                         </s.Grid>
@@ -314,11 +317,16 @@ export const DiscussProject = () => {
 
 // section
 export const ViewAllProjects = () => {
+    const S = s.home;
+
     return (
-        <s.home.ViewAllProjects>
+        <S.ViewAllProjects>
             <s.GridA>
                 Growing brands through <br />
                 Strategy, Innovation, Technology and Creativity.
+                <S.Ribbon>
+                    <Image src={ribbon} alt="" layout="fill" objectFit="contain" />
+                </S.Ribbon>
             </s.GridA>
 
             <s.GridB>
@@ -334,7 +342,7 @@ export const ViewAllProjects = () => {
             </s.GridB>
 
             <s.GridC>View All Projects</s.GridC>
-        </s.home.ViewAllProjects>
+        </S.ViewAllProjects>
     );
 };
 
@@ -373,60 +381,63 @@ export const OurClients = () => {
         clients_14,
         clients_15,
     ];
+    const S = s.home;
+
     return (
-        <s.home.OurClients>
-            <s.home.OurClients_header relative>
+        <S.OurClients>
+            <S.OurClients_header relative>
                 Our Clients
-                {/* <s.Box relative bd="red" bottom="0" right="0" ht="5rem" wd="5rem">
-                    <Image src={media.designs.ribbon} alt="" layout="fill" objectFit="contain" />
-                </s.Box> */}
-            </s.home.OurClients_header>
-            <s.home.OurClients_body>
+                <S.Ribbon>
+                    <Image src={ribbon} alt="" layout="fill" objectFit="contain" />
+                </S.Ribbon>
+            </S.OurClients_header>
+            <S.OurClients_body>
                 {/* <div /> */}
                 {/* 4 icons */}
-                <s.home.OurClients_animationColumn>
+                <S.OurClients_animationColumn>
                     {four_icons.map((icon, i) => {
                         return (
-                            <s.home.OurClients_animationCard key={i}>
-                                <s.Grid2a>
-                                    <Image src={icon.icon} alt="" height={40} width={40} />
-                                </s.Grid2a>
+                            <S.OurClients_animationCard key={i}>
+                                <S.Pic>
+                                    <Image src={icon.icon} alt="" layout="fill" objectFit="contain" />
+                                </S.Pic>
                                 <s.Grid2b>{icon.title}</s.Grid2b>
-                            </s.home.OurClients_animationCard>
+                            </S.OurClients_animationCard>
                         );
                     })}
-                </s.home.OurClients_animationColumn>
+                </S.OurClients_animationColumn>
                 {/* client list */}
-                <s.home.OurClients_cards>
+                <S.OurClients_cards>
                     <s.GridA>
                         {client_icons.map((icon, i) => {
                             return (
-                                <s.home.OurClients_card key={i}>
+                                <S.OurClients_card key={i}>
                                     <s.Grid4a relative>
                                         <Image src={icon} alt="" layout="fill" objectFit="contain" />
                                     </s.Grid4a>
-                                </s.home.OurClients_card>
+                                </S.OurClients_card>
                             );
                         })}
                     </s.GridA>
-                </s.home.OurClients_cards>
+                </S.OurClients_cards>
                 {/* <div style={{ border: '2px solid cyan', width: '100%' }}>aaa</div> */}
                 {/* <div /> */}
-            </s.home.OurClients_body>
-        </s.home.OurClients>
+            </S.OurClients_body>
+        </S.OurClients>
     );
 };
 
 // section
 export const Quote = () => {
+    const S = s.home;
     return (
         <s.home.Quote>
             <s.home.Quote_header>
-                <s.Box1>
+                <S.Text>
                     Your success is our story,
                     <br />
                     Clients Feedback
-                </s.Box1>
+                </S.Text>
             </s.home.Quote_header>
             <s.home.Quote_wrapper1>
                 {/* quote icons */}
