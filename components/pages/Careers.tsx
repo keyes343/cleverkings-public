@@ -45,6 +45,48 @@ const Career_body = () => {
             title: 'Employee Training',
         },
     ];
+
+    const [firstName, set_firstName] = useState('');
+    const [lastName, set_lastName] = useState('');
+    const [phone, set_phone] = useState('');
+    const [email, set_email] = useState('');
+    const [job, set_job] = useState('');
+    const [cv, set_cv] = useState('');
+
+    const inputs = [
+        {
+            placeholder: 'First Name',
+            value: firstName,
+            onChange: (val: string) => set_firstName(val),
+        },
+        {
+            placeholder: 'Last Name',
+            value: lastName,
+            onChange: (val: string) => set_lastName(val),
+        },
+        {
+            placeholder: 'Email Address',
+            value: email,
+            onChange: (val: string) => set_email(val),
+        },
+        {
+            placeholder: 'Phone',
+            value: phone,
+            onChange: (val: string) => set_phone(val),
+        },
+        {
+            placeholder: 'Select Job',
+            value: job,
+            onChange: (val: string) => set_job(val),
+            icon: <S.Icon_dropdown />,
+        },
+        {
+            placeholder: 'Phone',
+            value: cv,
+            onChange: (val: string) => set_cv(val),
+            icon: <S.Icon_upload />,
+        },
+    ];
     return (
         <S.Career_body>
             <S.JoinUs>
@@ -59,7 +101,6 @@ const Career_body = () => {
                     to tackle any challenge. We love to guide you at each stage of your professional journey, starting from building your professional
                     identity to taking you inside. Let{`'`} s work together towards achieving career aspirations. Check out the current openings!
                 </S.BodyText>
-                <S.Btn>View Current Openings</S.Btn>
                 <S.Btn>View Current Openings</S.Btn>
                 <S.Pic>
                     <Image src={media.pages.career.job} alt="" layout="fill" objectFit="contain" />
@@ -81,6 +122,23 @@ const Career_body = () => {
                     })}
                 </S.Stripe>
             </S.Checkout>
+
+            <S.Apply>
+                <s.GridA>Apply for your dream job!</s.GridA>
+                <S.Inputs>
+                    {inputs.map((box, i) => {
+                        return (
+                            <S.Input_1 key={i}>
+                                <input placeholder={box.placeholder} value={box.value} onChange={(e) => box.onChange(e.currentTarget.value)} />
+                            </S.Input_1>
+                        );
+                    })}
+                    <S.Btn>APPLY</S.Btn>
+                    <S.BestOfLuck relative>
+                        <Image src={media.pages.career.best_font} alt="" layout="fill" objectFit="contain" />
+                    </S.BestOfLuck>
+                </S.Inputs>
+            </S.Apply>
         </S.Career_body>
     );
 };
