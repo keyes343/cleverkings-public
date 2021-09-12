@@ -8,7 +8,7 @@ import { h, r, e, s, t, reuse } from '../components/pages/incoming';
 const About = () => {
     return (
         <>
-            <pages.About />
+            <pages.Careers />
         </>
     );
 };

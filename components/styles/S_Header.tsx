@@ -97,6 +97,7 @@ export const NavOption_wrapper = styled(Grid)`
         display: none;
     }
     ${g.Grid2a} {
+        /* border: 2px solid red; */
     }
 `;
 
