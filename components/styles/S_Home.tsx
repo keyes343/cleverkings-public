@@ -323,24 +323,28 @@ export const ThingsWeLove = styled(Grid)`
 `;
 
 // -------------------------------------------start
-export const WeAre_title = styled(Grid)``;
-export const WeAre_description = styled(Grid)``;
-export const WeAre_imageAndDescriptionWrapper = styled(Grid)``;
-export const WeAre_descriptionAndAwardWrapper = styled(Grid)``;
+export const Title = styled(Grid)``;
+export const Description = styled(Grid)``;
+export const ImageAndDescriptionWrapper = styled(Grid)``;
+export const DescriptionAndAwardWrapper = styled(Grid)``;
+export const ThreePics = styled(Grid)``;
+export const ThreePics_wrapper = styled(Grid)``;
 // -------------------------------------------end
 
 // section
 export const WeAre = styled(Grid)`
-    @media ${e.device.mobileL} {
-        /* display: none; */
-        padding: 0;
-    }
     grid-template-columns: 1fr;
     gap: 3rem;
     /* border: 2px solid blue; */
     /* place-items: center start; */
+    @media ${e.device.mobileL} {
+        gap: 1rem;
+        /* display: none; */
+        padding: 0;
+        /* border: 2px solid blue; */
+    }
     padding: 7rem 7rem;
-    ${WeAre_title} {
+    ${Title} {
         @media ${e.device.mobileL} {
             /* border: 2px solid red; */
             padding: 2rem;
@@ -357,13 +361,14 @@ export const WeAre = styled(Grid)`
         ${g.Box2} {
             @media ${e.device.mobileL} {
                 font-size: var(--larger);
+                /* border: 2px solid blue; */
             }
             font-size: 2.6rem;
             font-weight: bold;
             /* border: 2px solid blue; */
         }
     }
-    ${WeAre_imageAndDescriptionWrapper} {
+    ${ImageAndDescriptionWrapper} {
         @media ${e.device.mobileL} {
             grid-template-columns: 1fr;
             /* border: 2px solid red; */
@@ -371,18 +376,59 @@ export const WeAre = styled(Grid)`
         /* border: 2px solid blue; */
         grid-template-columns: 1fr 1.5fr;
         gap: 3rem;
-        ${g.Grid1} {
-            /* border: 2px solid blue; */
+        ${ThreePics_wrapper} {
+            border: 2px solid blue;
             height: 100%;
+            ${ThreePics} {
+                border: 2px solid red;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                    '. bb'
+                    'aa bb'
+                    'aa bb'
+                    'aa cc'
+                    'aa cc'
+                    '. cc';
+                gap: 2rem;
+                @media ${e.device.mobileL} {
+                    padding: 1rem 1rem;
+                    gap: 1rem;
+                    /* border: 2px solid blue; */
+                }
+                ${g.Grid1} {
+                    /* border: 2px solid cyan; */
+                    grid-area: aa;
+                }
+                ${g.Grid2} {
+                    height: 1rem;
+                    /* width: 2rem; */
+                    grid-area: bb;
+                    /* border: 2px solid orange; */
+                    min-height: 17rem;
+                    @media ${e.device.mobileL} {
+                        min-height: 18rem;
+                    }
+                }
+                ${g.Grid3} {
+                    grid-area: cc;
+                    height: 1rem;
+                    /* border: 2px solid orange; */
+                    min-height: 17rem;
+                    /* width: 20rem; */
+                    @media ${e.device.mobileL} {
+                        min-height: 18rem;
+                    }
+                }
+            }
         }
-        ${WeAre_descriptionAndAwardWrapper} {
+        ${DescriptionAndAwardWrapper} {
             height: 100%;
             grid-template-rows: auto 1fr;
             place-items: start start;
             gap: 2rem;
             /* border: 2px solid blue; */
             /* about cleverkings */
-            ${WeAre_description} {
+            ${Description} {
                 font-size: 1.2rem;
                 line-height: 1.7rem;
                 /* border: 2px solid red; */
@@ -468,48 +514,6 @@ export const Awards = styled(Grid)<{ count: number }>`
             }
         }
     } ;
-`;
-
-export const ThreePics = styled(Grid)`
-    /* border: 2px solid red; */
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        '. bb'
-        'aa bb'
-        'aa bb'
-        'aa cc'
-        'aa cc'
-        '. cc';
-    gap: 2rem;
-    @media ${e.device.mobileL} {
-        padding: 1rem 1rem;
-        gap: 1rem;
-        /* border: 2px solid blue; */
-    }
-    ${g.Grid1} {
-        /* border: 2px solid cyan; */
-        grid-area: aa;
-    }
-    ${g.Grid2} {
-        height: 1rem;
-        /* width: 2rem; */
-        grid-area: bb;
-        /* border: 2px solid orange; */
-        min-height: 17rem;
-        @media ${e.device.mobileL} {
-            min-height: 18rem;
-        }
-    }
-    ${g.Grid3} {
-        grid-area: cc;
-        height: 1rem;
-        /* border: 2px solid orange; */
-        min-height: 17rem;
-        /* width: 20rem; */
-        @media ${e.device.mobileL} {
-            min-height: 18rem;
-        }
-    }
 `;
 
 // -------------------------------------------start

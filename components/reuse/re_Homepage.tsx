@@ -1,6 +1,79 @@
 import React from 'react';
-import { h, r, e, s, t, media } from './incoming';
+import { h, r, e, s, t } from './incoming';
 import Image from 'next/image';
+// import fb from './fb.svg';
+
+// const media = process.env.AWS_PUBLIC_FILES;
+const media = 'https://cleverkings-public.s3.ap-south-1.amazonaws.com/media';
+
+const root_social = media + '/socialIcons/';
+const fb = root_social + 'fb.svg';
+const linkedin = root_social + 'linkedin.svg';
+const twitter = root_social + 'twitter.svg';
+const whatsapp = root_social + 'whatsapp.svg';
+const zoom = root_social + 'zoom.svg';
+
+const root_weLove = media + '/weLove/';
+const design_and_branding = root_weLove + 'design_branding.svg';
+const app_and_web_dev = root_weLove + 'app_web_development.svg';
+const business_consultation = root_weLove + 'business_consultation.svg';
+const seo_smm = root_weLove + 'seosmm.svg';
+
+const root_designs = media + '/designs/';
+const black_dots = root_designs + 'black_dots.svg';
+const white_dots = root_designs + 'white_dots.svg';
+const laptop_pic = root_designs + 'laptop_pic.png';
+const left_arrow = root_designs + 'left_arrow.svg';
+const quote_icon = root_designs + 'quote_icon.svg';
+const ribbon = root_designs + 'ribbon.svg';
+const right_arrow = root_designs + 'right_arrow.svg';
+
+const root_awards = media + '/awards/';
+const award_1 = root_awards + 'award_1.png';
+const award_2 = root_awards + 'award_2.png';
+const award_3 = root_awards + 'award_3.png';
+const award_4 = root_awards + 'award_4.png';
+
+const root_ourClients = media + '/awards/ourClients/';
+const awesome_people = root_ourClients + 'awesome_people.svg';
+const clients_world_wild = root_ourClients + 'clients_world_wild.svg';
+const project_delivered = root_ourClients + 'project_delivered.svg';
+const years_of_expertise = root_ourClients + 'years_of_expertise.svg';
+
+const root_ourClients_list = media + '/ourClients/clientList/';
+const clients_02 = root_ourClients_list + 'Clients_02.svg';
+// const clients_02 = 'https://cleverkings-public.s3.ap-south-1.amazonaws.com/media/ourClients/clientList/Clients_02.svg';
+const clients_04 = root_ourClients_list + 'Clients_04.svg';
+const clients_05 = root_ourClients_list + 'Clients_05.svg';
+const clients_06 = root_ourClients_list + 'Clients_06.svg';
+const clients_07 = root_ourClients_list + 'Clients_07.svg';
+const clients_08 = root_ourClients_list + 'Clients_08.svg';
+const clients_10 = root_ourClients_list + 'Clients_10.svg';
+// const clients_10 = 'https://cleverkings-public.s3.ap-south-1.amazonaws.com/media/ourClients/clientList/Clients-10.svg';
+const clients_11 = root_ourClients_list + 'Clients_11.svg';
+const clients_12 = root_ourClients_list + 'Clients_12.svg';
+const clients_13 = root_ourClients_list + 'Clients_13.svg';
+const clients_14 = root_ourClients_list + 'Clients_14.svg';
+const clients_15 = root_ourClients_list + 'Clients_15.svg';
+
+const root_backgrounds = media + '/backgrounds/';
+const feedback = root_backgrounds + 'feedback_bg.png';
+const lets_talk = root_backgrounds + 'lets_talk_bg.png';
+
+const root_ourThoughts = media + '/ourThoughts/';
+const blog_1 = root_ourThoughts + 'blog_1.png';
+const blog_2 = root_ourThoughts + 'blog_2.png';
+const blog_3 = root_ourThoughts + 'blog_3.png';
+
+// pages
+const root_pages = media + '/pages/';
+const root_pages_home = media + '/pages/home/';
+// const who_we_are_1 = root_pages_home + 'who_we_are_1.png';
+const who_we_are_1 = 'https://cleverkings-public.s3.ap-south-1.amazonaws.com/media/pages/home/who_we_are_1.png';
+const who_we_are_2 = root_pages_home + 'who_we_are_2.png';
+// const who_we_are_2 = 'https://cleverkings-public.s3.ap-south-1.amazonaws.com/media/pages/home/who_we_are_2.png';
+const who_we_are_3 = root_pages_home + 'who_we_are_3.jpg';
+// --------------------------------------------------------------------------------------------------------------------
 
 // section
 export const ThingsThatMatter = () => {
@@ -10,19 +83,13 @@ export const ThingsThatMatter = () => {
             <SocialIcons />
             {/* off in mobile */}
             {/* black dot moving from left to side animation */}
-            <s.home.MovingDots>
-                <Image src={media.designs.black_dots} alt="" layout="fill" objectFit="contain" />
-            </s.home.MovingDots>
+            <s.home.MovingDots>{<Image src={black_dots} alt="" layout="fill" objectFit="contain" />}</s.home.MovingDots>
             {/* stationary laptop image */}
-            <s.home.Laptop>
-                <Image src={media.designs.laptop_pic} alt="" layout="fill" objectFit="contain" />
-            </s.home.Laptop>
+            <s.home.Laptop>{<Image src={laptop_pic} alt="" layout="fill" objectFit="contain" />}</s.home.Laptop>
 
             <s.home.circle1 />
             <s.home.circle2 />
-            <s.home.Ribbon>
-                <Image src={media.designs.ribbon} alt="" layout="fill" objectFit="contain" />
-            </s.home.Ribbon>
+            {/* <s.home.Ribbon>{<Image src={media.designs.ribbon} alt="" layout="fill" objectFit="contain" />}</s.home.Ribbon> */}
         </s.home.ThingsThatMatter>
     );
 };
@@ -39,7 +106,7 @@ const ShoutoutText = () => {
             </s.home.ShoutoutArea_heading>
             {/* off in desktop */}
             <s.Grid2a relative>
-                <Image src={media.designs.laptop_pic} alt="" layout="fill" objectFit="contain" />
+                <Image src={laptop_pic} alt="" layout="fill" objectFit="contain" />
             </s.Grid2a>
             {/* <s.Grid1a>dd</s.Grid1a> */}
             <s.Box4>
@@ -55,23 +122,23 @@ const ShoutoutText = () => {
 const SocialIcons = () => {
     const icons = [
         {
-            icon: media.social.fb,
+            icon: fb,
             link: '',
         },
         {
-            icon: media.social.whatsapp,
+            icon: whatsapp,
             link: '',
         },
         {
-            icon: media.social.twitter,
+            icon: twitter,
             link: '',
         },
         {
-            icon: media.social.zoom,
+            icon: zoom,
             link: '',
         },
         {
-            icon: media.social.linkedin,
+            icon: linkedin,
             link: '',
         },
     ];
@@ -91,24 +158,23 @@ const SocialIcons = () => {
         </s.home.SocialIcions>
     );
 };
-
 // section
 export const ThingsWeLove = () => {
     const icons = [
         {
-            icon: media.design_and_branding,
+            icon: design_and_branding,
             title: 'Design & Branding',
         },
         {
-            icon: media.app_and_web_dev,
+            icon: app_and_web_dev,
             title: 'App and Web Development',
         },
         {
-            icon: media.seo_smm,
+            icon: seo_smm,
             title: 'SEO SMM & Marketing',
         },
         {
-            icon: media.business_consultation,
+            icon: business_consultation,
             title: 'Business Consultation',
         },
     ];
@@ -133,7 +199,7 @@ export const ThingsWeLove = () => {
             {/* white dots floating */}
             <s.home.ThingsWeLove_dots>
                 <s.Grid3a relative>
-                    <Image src={media.designs.white_dots} layout="fill" objectFit="contain" alt="" />
+                    <Image src={white_dots} layout="fill" objectFit="contain" alt="" />
                 </s.Grid3a>
             </s.home.ThingsWeLove_dots>
         </s.home.ThingsWeLove>
@@ -142,26 +208,37 @@ export const ThingsWeLove = () => {
 
 // section
 export const WeAre = () => {
+    const S = s.home;
     return (
-        <s.home.WeAre>
+        <S.WeAre>
             {/* row 1 of 2 */}
-            <s.home.WeAre_title>
+            <S.Title>
                 <s.Box1>We are</s.Box1>
                 <s.Box2>
                     Global leaders <br /> in Strengthening of Business
                 </s.Box2>
-            </s.home.WeAre_title>
+            </S.Title>
 
             {/* row 2 of 2 */}
-            <s.home.WeAre_imageAndDescriptionWrapper>
+            <S.ImageAndDescriptionWrapper>
                 {/* left pics */}
-                <s.Grid1>
-                    <ThreePics />
-                </s.Grid1>
+                <s.home.ThreePics_wrapper>
+                    <s.home.ThreePics>
+                        <s.Grid1 relative>
+                            <Image src={who_we_are_1} alt="" layout="fill" objectFit="cover" />
+                        </s.Grid1>
+                        <s.Grid2 relative>
+                            <Image src={who_we_are_2} alt="" layout="fill" objectFit="cover" />
+                        </s.Grid2>
+                        <s.Grid3 relative>
+                            <Image src={who_we_are_3} alt="" layout="fill" objectFit="cover" />
+                        </s.Grid3>
+                    </s.home.ThreePics>
+                </s.home.ThreePics_wrapper>
                 {/* awards */}
-                <s.home.WeAre_descriptionAndAwardWrapper>
+                <S.DescriptionAndAwardWrapper>
                     {/* about cleverkings */}
-                    <s.home.WeAre_description>
+                    <S.Description>
                         Cleverkings Pvt. Ltd. is one of the pre-eminent software company, engaged in flourishing out-of-box products that aim to bring
                         smartness to a world of business operations where everything goes usual. Our company came into existence in 2016 and became
                         fully integrated in 2017. We are headquartered at Calicut and is one of the most respected IT company, inaugurated and website
@@ -174,35 +251,19 @@ export const WeAre = () => {
                                 Read More
                             </s.Box>
                         </s.Grid>
-                    </s.home.WeAre_description>
+                    </S.Description>
                     <s.Box2>
                         <Awards />
                     </s.Box2>
                     {/* <div /> */}
-                </s.home.WeAre_descriptionAndAwardWrapper>
-            </s.home.WeAre_imageAndDescriptionWrapper>
-        </s.home.WeAre>
-    );
-};
-
-const ThreePics = () => {
-    return (
-        <s.home.ThreePics>
-            <s.Grid1 relative>
-                <Image src={media.pages.home.who_we_are_1} alt="" layout="fill" objectFit="cover" />
-            </s.Grid1>
-            <s.Grid2 relative>
-                <Image src={media.pages.home.who_we_are_2} alt="" layout="fill" objectFit="cover" />
-            </s.Grid2>
-            <s.Grid3 relative>
-                <Image src={media.pages.home.who_we_are_3} alt="" layout="fill" objectFit="cover" />
-            </s.Grid3>
-        </s.home.ThreePics>
+                </S.DescriptionAndAwardWrapper>
+            </S.ImageAndDescriptionWrapper>
+        </S.WeAre>
     );
 };
 
 const Awards = () => {
-    const icons = [media.award_1, media.award_2, media.award_3, media.award_4];
+    const icons = [award_1, award_2, award_3, award_4];
     return (
         <s.home.Awards count={icons.length}>
             <s.Box3>Awards &amp; Recognition</s.Box3>
@@ -230,7 +291,7 @@ export const DiscussProject = () => {
             {/* is absolute */}
             <s.home.DiscussProject_dots>
                 <s.Box ht="19rem" wd="19rem" left="-4rem" relative>
-                    <Image src={media.designs.white_dots} alt="" layout="fill" objectFit="contain" />
+                    <Image src={white_dots} alt="" layout="fill" objectFit="contain" />
                 </s.Box>
             </s.home.DiscussProject_dots>
             {/* spacing */}
@@ -243,7 +304,7 @@ export const DiscussProject = () => {
             {/* col 2 of 2 - discuss a project */}
             <s.Grid2>
                 <s.Grid>
-                    <Image src={media.designs.right_arrow} alt="" height={50} width={50} />
+                    <Image src={right_arrow} alt="" height={50} width={50} />
                 </s.Grid>
                 <s.Box2>Discuss A Project</s.Box2>
             </s.Grid2>
@@ -262,13 +323,13 @@ export const ViewAllProjects = () => {
 
             <s.GridB>
                 <s.Grid1 relative>
-                    <Image src={media.designs.left_arrow} alt="laptop" layout="fill" objectFit="contain" />
+                    <Image src={left_arrow} alt="laptop" layout="fill" objectFit="contain" />
                 </s.Grid1>
                 <s.Grid2 relative>
-                    <Image src={media.designs.laptop_pic} alt="laptop" layout="fill" objectFit="contain" />
+                    <Image src={laptop_pic} alt="laptop" layout="fill" objectFit="contain" />
                 </s.Grid2>
                 <s.Grid1 relative>
-                    <Image src={media.designs.right_arrow} alt="laptop" layout="fill" objectFit="contain" />
+                    <Image src={right_arrow} alt="laptop" layout="fill" objectFit="contain" />
                 </s.Grid1>
             </s.GridB>
 
@@ -281,35 +342,36 @@ export const ViewAllProjects = () => {
 export const OurClients = () => {
     const four_icons = [
         {
-            icon: media.ourClients.years_of_expertise,
+            icon: years_of_expertise,
             title: 'Years of Expertise',
         },
         {
-            icon: media.ourClients.project_delivered,
+            icon: project_delivered,
             title: 'Projects Delivered',
         },
         {
-            icon: media.ourClients.clients_world_wild,
+            icon: clients_world_wild,
             title: 'Clients Worldwide',
         },
         {
-            icon: media.ourClients.awesome_people,
+            icon: awesome_people,
             title: 'Awesome People',
         },
     ];
 
     const client_icons = [
-        media.ourClients.Clients_02,
-        media.ourClients.Clients_05,
-        media.ourClients.Clients_06,
-        media.ourClients.Clients_07,
-        media.ourClients.Clients_08,
-        media.ourClients.Clients_10,
-        media.ourClients.Clients_11,
-        media.ourClients.Clients_12,
-        media.ourClients.Clients_13,
-        media.ourClients.Clients_14,
-        media.ourClients.Clients_15,
+        // clients_02,
+        // clients_04,
+        // clients_05,
+        // clients_06,
+        // clients_07,
+        // clients_08,
+        clients_10,
+        clients_11,
+        clients_12,
+        clients_13,
+        clients_14,
+        clients_15,
     ];
     return (
         <s.home.OurClients>
@@ -369,7 +431,7 @@ export const Quote = () => {
             <s.home.Quote_wrapper1>
                 {/* quote icons */}
                 <s.home.Quote_icon relative>
-                    <Image src={media.designs.quote_icon} alt="quote" layout="fill" objectFit="contain" />
+                    <Image src={quote_icon} alt="quote" layout="fill" objectFit="contain" />
                 </s.home.Quote_icon>
                 <s.Box2>
                     The team here is well qualified and has an incredible level of professionalism.
@@ -387,7 +449,7 @@ export const Quote = () => {
             </s.home.Quote_by>
             {/* background image */}
             <s.GridD>
-                <Image src={media.backgrounds.feedback} alt="somoene on phone" layout="fill" objectFit="cover" />
+                <Image src={feedback} alt="somoene on phone" layout="fill" objectFit="cover" />
             </s.GridD>
         </s.home.Quote>
     );
@@ -397,15 +459,15 @@ export const Quote = () => {
 export const OurThoughts = () => {
     const thumbnails = [
         {
-            pic: media.ourThoughts.blog_1,
+            pic: blog_1,
             text: 'Let Your Top Performers Move Around the Company',
         },
         {
-            pic: media.ourThoughts.blog_2,
+            pic: blog_2,
             text: `Digitizing India's Small and Midsize Businesses`,
         },
         {
-            pic: media.ourThoughts.blog_3,
+            pic: blog_3,
             text: `Leaders, Don’t Be Afraid to Talk About Your Fears and Anxieties`,
         },
     ];
@@ -456,12 +518,12 @@ export const LetsTalk = () => {
                     />
                 </s.home.LetsTalk_wrapInput>
                 <s.Grid2b relative>
-                    <Image src={media.designs.right_arrow_black} alt="" layout="fill" objectFit="contain" />
+                    <Image src={right_arrow} alt="" layout="fill" objectFit="contain" />
                 </s.Grid2b>
             </s.Grid2>
 
             <s.Box2 relative>
-                <Image src={media.backgrounds.lets_talk} layout="fill" objectFit="cover" alt="" />
+                <Image src={lets_talk} layout="fill" objectFit="cover" alt="" />
             </s.Box2>
         </s.home.LetsTalk>
     );

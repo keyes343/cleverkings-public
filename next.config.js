@@ -13,7 +13,7 @@
 module.exports = {
     reactStrictMode: true,
     images: {
-        domains: ['cleverkings-publicfiles.s3.ap-south-1.amazonaws.com'],
+        domains: ['cleverkings-publicfiles.s3.ap-south-1.amazonaws.com', 'cleverkings-public.s3.ap-south-1.amazonaws.com'],
     },
     // webpack5: (config,{buildId,dev,isServer,defaultLoaders,webpack}) => {
     //   config.node = {
