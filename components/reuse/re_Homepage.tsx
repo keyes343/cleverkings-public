@@ -440,6 +440,9 @@ export const Quote = () => {
                     Your success is our story,
                     <br />
                     Clients Feedback
+                    <S.Ribbon>
+                        <Image src={ribbon} alt="" layout="fill" objectFit="contain" />
+                    </S.Ribbon>
                 </S.Text>
             </s.home.Quote_header>
             <s.home.Quote_wrapper1>

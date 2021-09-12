@@ -3,10 +3,18 @@ import { t, e } from './incoming';
 import { Box, Grid } from './S_Box';
 import * as g from '.';
 
+// -------------------------------start
+export const Text = styled(Box)``;
+export const NavOption_wrapper = styled(Grid)<{ count: number }>``;
+export const NavOption_btn = styled(Box)``;
+export const Wrapper1 = styled(Grid)``;
+
+// -------------------------------end
+
 export const Navbar = styled(Grid)<{ count: number }>`
     color: white;
     background-color: ${(p) => p.theme.primary};
-    padding: 1rem 4rem;
+    padding: 0.5rem 4rem;
     place-items: center end;
     position: relative;
     @media ${e.device.mobileL} {
@@ -14,8 +22,7 @@ export const Navbar = styled(Grid)<{ count: number }>`
         /* display: none; */
     }
     /* only deskR̥top */
-    ${g.GridA} {
-        gap: 2rem;
+    ${NavOption_wrapper} {
         width: auto;
         grid-template-columns: ${(p) => `repeat(${p.count},auto)`};
         /* border: 2px solid blue; */
@@ -24,10 +31,18 @@ export const Navbar = styled(Grid)<{ count: number }>`
             display: none;
         }
         /* nav option texts */
-        ${g.Grid1} {
+        ${NavOption_btn} {
             width: auto;
             cursor: pointer;
             font-size: 1.2rem;
+            /* border: 2px solid blue; */
+            padding: 0.6rem 1rem;
+            transition: all 0.3s ease-in-out;
+            border-radius: 7px;
+            :hover {
+                padding: 0.6rem 2rem;
+                background: linear-gradient(122deg, rgba(210, 199, 188, 1) 0%, rgba(28, 10, 2, 1) 100%);
+            }
         }
     }
     /* only mobile */

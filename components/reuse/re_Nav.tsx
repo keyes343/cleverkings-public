@@ -53,10 +53,10 @@ const navLinks = [
         title: 'Contact Us',
         link: '/Contact',
     },
-    {
-        title: 'Cookie Policy',
-        link: '/Cookie_Policy',
-    },
+    // {
+    //     title: 'Cookie Policy',
+    //     link: '/Cookie_Policy',
+    // },
 ];
 
 // const popup_name = 'right_nav_button';
@@ -86,20 +86,21 @@ export const Navbar = () => {
         });
     };
 
+    const S = s.nav;
     return (
-        <s.nav.Navbar count={navLinks.length} onClick={print_contexts}>
+        <S.Navbar count={navLinks.length} onClick={print_contexts}>
             {/* floating popup for nav */}
             <NavPopup />
             {/* only desktop */}
-            <s.GridA>
+            <S.NavOption_wrapper count={navLinks.length}>
                 {navLinks.map((link, i) => {
                     return (
-                        <s.Grid1 key={i} onClick={() => routeTo(link.link)}>
+                        <S.NavOption_btn key={i} onClick={() => routeTo(link.link)}>
                             {link.title}
-                        </s.Grid1>
+                        </S.NavOption_btn>
                     );
                 })}
-            </s.GridA>
+            </S.NavOption_wrapper>
             {/* only mobile */}
             <s.GridB>
                 <s.Grid1 relative>
@@ -119,7 +120,7 @@ export const Navbar = () => {
                     </s.Grid1a>
                 </s.Grid1>
             </s.GridC>
-        </s.nav.Navbar>
+        </S.Navbar>
     );
 };
 

@@ -626,12 +626,15 @@ export const ViewAllProjects = styled(Grid)`
     }
     ${g.GridA} {
         font-weight: bold;
-        font-size: ${(p) => p.theme.font.large};
+        font-size: var(--larger);
         text-align: center;
         /* border: 2px solid blue; */
+        @media ${e.device.mobileL} {
+            font-size: var(--large);
+        }
     }
+    padding: 0 3rem;
     ${g.GridB} {
-        padding: 0 3rem;
         grid-template-columns: 1fr 2fr 1fr;
         /* border: 2px solid red; */
         /* @media ${e.device.laptopL} {
@@ -662,6 +665,11 @@ export const ViewAllProjects = styled(Grid)`
         text-transform: uppercase;
         font-weight: bold;
         font-size: 1.3rem;
+        cursor: pointer;
+        :hover {
+            color: darkred;
+            text-decoration: underline;
+        }
         @media ${e.device.mobileL} {
             font-size: 1rem;
         }
@@ -808,7 +816,7 @@ export const Text = styled(Box)``;
 // section
 export const Quote = styled(Grid)`
     --height: 35rem;
-    --mobheight: 45rem;
+    --mobheight: 40rem;
     --pad: 4rem 6rem;
     --padMobile: 4rem 2rem;
 
@@ -834,10 +842,22 @@ export const Quote = styled(Grid)`
             opacity: 0.8;
             font-size: var(--larger);
             font-weight: bold;
+            position: relative;
             @media ${e.device.mobileL} {
+                opacity: 0.9;
                 position: relative;
                 /* display: none; */
-                font-size: 1.8rem;
+                font-size: var(--large);
+            }
+            ${Ribbon} {
+                position: absolute;
+                @media ${e.device.mobileL} {
+                    /* border: 2px solid blue; */
+                    height: 7rem;
+                    width: 7rem;
+                    bottom: -4.6rem;
+                    left: 6rem;
+                }
             }
         }
     }
