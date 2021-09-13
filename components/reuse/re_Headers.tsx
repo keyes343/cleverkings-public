@@ -1,9 +1,22 @@
 import React, { useState, useEffect, useMemo, useContext } from 'react';
-import { h, r, e, s, t, media } from './incoming';
+import { h, r, e, s, t } from './incoming';
 import Image from 'next/image';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { NavPopup } from './re_Nav';
+
+const media = 'https://cleverkings-public.s3.ap-south-1.amazonaws.com/media';
+
+const root_logos = media + '/logos/';
+const white_logo = root_logos + 'ck_logo_white.svg';
+const black_logo = root_logos + 'black_logo.svg';
+
+const root_social = media + '/socialIcons/';
+const fb = root_social + 'fb.svg';
+const linkedin = root_social + 'linkedin.svg';
+const twitter = root_social + 'twitter.svg';
+const whatsapp = root_social + 'whatsapp.svg';
+const zoom = root_social + 'zoom.svg';
 
 export interface PageHeaderProps {
     pic: string;
@@ -12,20 +25,30 @@ export interface PageHeaderProps {
 }
 
 export const PageHeader: React.FC<PageHeaderProps> = (p) => {
+    const S = s.header;
+    const social_icons = [fb, twitter, linkedin, whatsapp, zoom];
     return (
-        <s.header.PageHeader relative>
+        <s.header.PageHeader relative icon_count={social_icons.length}>
             {/* header-background-img */}
-            <s.GridA absolute>
-                <s.Box1 relative>
+            <S.Column1 absolute>
+                <S.Pic>
                     <Image src={p.pic} alt="" layout="fill" objectFit="cover" />
-                </s.Box1>
-            </s.GridA>
+                </S.Pic>
+            </S.Column1>
             {/* opening timings display */}
-            <s.Grid1>
-                <s.Grid1a>Opening: Mon-Sat 09:00 - 18-00</s.Grid1a>
+            <S.Column2>
+                <S.Timings>Opening: Mon-Sat 09:00 - 18-00</S.Timings>
                 <div />
-                <s.Grid2a>fb | twitter | youtube etc</s.Grid2a>
-            </s.Grid1>
+                <S.Icons>
+                    {social_icons.map((icon, i) => {
+                        return (
+                            <S.Pic key={i}>
+                                <Image src={icon} alt="" layout="fill" objectFit="contain" />
+                            </S.Pic>
+                        );
+                    })}
+                </S.Icons>
+            </S.Column2>
             {/* navbar */}
             <Navbar />
             {/* Large Text */}
@@ -99,7 +122,7 @@ const Navbar = () => {
             <NavPopup />
             {/* logo */}
             <s.header.LogoWrapper relative onClick={() => router.push('/')}>
-                <Image src={media.logos.black_logo} alt="" layout="fill" objectFit="contain" />
+                <Image src={black_logo} alt="" layout="fill" objectFit="contain" />
             </s.header.LogoWrapper>
             {/* nav options */}
             {/* only desktop */}

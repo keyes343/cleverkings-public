@@ -50,7 +50,26 @@ export const Ribbon = styled(Grid)`
     transform: rotate(-45deg);
 `;
 export const Laptop = styled(Grid)``;
-export const MovingDots = styled(Grid)``;
+
+const swing = keyframes`
+    0% {
+        right: 20rem;
+        top:7%
+        transform:scale(1)
+    }
+    40% {
+        right: 50rem;
+        top:13%;
+        transform:scale(1.3)
+    }
+    100% {
+        right: 20rem;
+        top:7%
+    }
+`;
+export const MovingDots = styled(Grid)`
+    animation: ${swing} 9s infinite;
+`;
 // -------------------------------------------end
 
 // section
@@ -75,6 +94,7 @@ export const ThingsThatMatter = styled(Grid)`
         /* transform: translateY(-50%); */
         width: 16rem;
         height: 16rem;
+
         /* border: 2px solid blue; */
     }
     /* stationary laptop image */
@@ -120,10 +140,6 @@ export const ThingsThatMatter = styled(Grid)`
     }
 `;
 
-const swing = keyframes`
-    from {}
-`;
-
 // ------------------------------------------start
 export const ShoutoutArea_heading = styled(Grid)``;
 // ------------------------------------------end
@@ -145,12 +161,13 @@ export const ShoutoutArea = styled(Grid)`
     left: 8rem;
     transform: translateY(-50%);
     place-items: center start;
-    gap: 1rem;
+    gap: 1.5rem;
     ${ShoutoutArea_heading} {
-        height: 13rem;
+        height: 12rem;
         font-family: var(--poppins);
         line-height: 4.6rem;
         font-size: 2.2rem;
+        /* border: 2px solid blue; */
         @media ${e.device.mobileL} {
             font-size: 1.4rem;
             /* border: 2px solid red; */
@@ -191,13 +208,17 @@ export const ShoutoutArea = styled(Grid)`
         }
         /* border: 2px solid blue; */
         background-color: ${(p) => p.theme.primary};
-        padding: 0.7rem 1.2rem 0.4rem;
+        padding: 0.7rem 1.5rem;
+        /* padding: 0.7rem 1.2rem 0.4rem; */
         border-radius: 3px;
         color: white;
         width: auto;
         /* font-size: var(--smallest); */
         text-transform: uppercase;
         cursor: pointer;
+        :hover {
+            opacity: 0.7;
+        }
     }
 `;
 

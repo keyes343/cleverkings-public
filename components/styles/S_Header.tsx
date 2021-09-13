@@ -4,8 +4,16 @@ import { Box, Grid } from './S_Box';
 import * as g from '.';
 import { HiMenu } from 'react-icons/hi';
 
+export const Timings = styled(Grid)``;
+export const Column1 = styled(Grid)``;
+export const Column2 = styled(Grid)``;
+export const Icons = styled(Grid)``;
+export const Pic = styled(Box)`
+    position: relative;
+`;
+
 // section
-export const PageHeader = styled(Grid)`
+export const PageHeader = styled(Grid)<{ icon_count: number }>`
     /* min-height: 10rem; */
     --height: 25rem;
     --mobile_height: 15rem;
@@ -19,10 +27,10 @@ export const PageHeader = styled(Grid)`
         /* border: 2px solid red; */
     }
     /* absolute - background image for header */
-    ${g.GridA} {
+    ${Column1} {
         z-index: -10;
         top: 0;
-        ${g.Box1} {
+        ${Pic} {
             height: var(--height);
             @media ${e.device.mobileL} {
                 height: var(--mobile_height);
@@ -30,7 +38,7 @@ export const PageHeader = styled(Grid)`
         }
     }
     /* opening timings for cleverkings */
-    ${g.Grid1} {
+    ${Column2} {
         /* border: 1px solid red; */
         /* background-color: red; */
         color: white;
@@ -39,9 +47,34 @@ export const PageHeader = styled(Grid)`
         @media ${e.device.mobileL} {
             display: none;
         }
-        ${g.Grid1a} {
+        ${Timings} {
+            /* border: 2px solid blue; */
+            transition: all 0.3s ease-out;
+            padding: 0.3rem 0.7rem;
+            border-radius: 7px;
+            :hover {
+                background-color: rgba(255, 255, 255, 0.4);
+                font-weight: bold;
+                color: black;
+                font-size: 1.3rem;
+                /* color: darkred; */
+            }
         }
-        ${g.Grid2a} {
+        ${Icons} {
+            grid-template-columns: repeat(${(p) => p.icon_count}, 3rem);
+            gap: 0.6rem;
+            padding: 0.5rem;
+            transition: all 0.3s ease-in-out;
+            border-radius: 7px;
+            :hover {
+                background-color: rgba(255, 255, 255, 0.4);
+            }
+            ${Pic} {
+                cursor: pointer;
+                min-height: 1.6rem;
+                min-width: 1rem;
+                /* border: 2px solid blue; */
+            }
         }
     }
 `;
@@ -52,9 +85,17 @@ export const Navbar = styled(Grid)`
     color: white;
     padding: 0.5rem 1rem;
     grid-template-columns: auto 1fr auto;
-    background-color: rgba(255, 255, 255, 0.3);
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    transition: all 0.3s ease-in-out;
+    :hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
     @media ${e.device.mobileL} {
-        /* border: 2px solid red; */
+        /* background-color: rgba(255, 255, 255, 0.5); */
+        /* width: 5rem; */
+        :hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
     }
     /* middle nav links - off in mobile */
     /* right most button on desktop, hamburger menu on mobile */
@@ -69,6 +110,10 @@ export const Navbar = styled(Grid)`
             width: auto;
             background-color: rgba(0, 0, 0, 0.7);
             padding: 0.5rem 1rem;
+            cursor: pointer;
+            :hover {
+                background-color: rgb(5, 53, 85);
+            }
             @media ${e.device.mobileL} {
                 display: none;
             }
@@ -128,19 +173,14 @@ export const NavOption = styled(Grid)<{ isDropdown: boolean }>`
 
     :hover {
         /* padding: 0; */
-        color: black;
-        border-bottom: 2px solid black;
+        /* color: black; */
+        border-bottom: 2px solid white;
     }
     ${NavBtn_title} {
         /* color: white; */
         padding: ${(p) => (p.isDropdown ? '0' : '0.3rem 0')};
         /* border: 2px solid red; */
         height: 100%;
-        :hover {
-            color: black;
-            font-weight: bold;
-            /* border: 2px solid; */
-        }
     }
     ${g.GridB} {
         display: ${(p) => (p.isDropdown ? 'grid' : 'none')};
